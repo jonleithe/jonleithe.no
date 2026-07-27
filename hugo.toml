@@ -1,5 +1,38 @@
-baseURL = 'https://www.jonleithe.no/'
-locale = 'en-gb'
-title = 'Jon Leithe'
-theme='PaperMod'
+baseURL     = 'https://www.jonleithe.no/'
+locale      = 'en-gb'
+title       = 'Jon Leithe'
+theme       ='PaperMod'
 
+[params]
+defaultTheme    = "auto"
+ShowReadingTime = true
+hideFooter      = false
+
+[params.profileMode]
+enabled = true
+title   = "Jon Leithe"
+subtitle = "Systems Engineer · Scientific Infrastructure · Software Development · Linux"
+
+[[params.profileMode.buttons]]
+name    = "About"
+url     = "/about/"
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 10
+
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 20
+
+[[menu.main]]
+name = "Engineering Notes"
+url = "/notes/"
+weight = 30
+
+[[menu.main]]
+name = "CV"
+url = "/cv/"
+weight = 40
