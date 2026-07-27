@@ -1,0 +1,5 @@
+baseURL = 'https://www.jonleithe.no/'
+locale = 'en-gb'
+title = 'Jon Leithe'
+theme='PaperMod'
+
