@@ -4,16 +4,16 @@ draft = false
 title = 'About'
 +++
 
----
-title: "Abouti Title"
----
+{{< figure
+    src     = "/images/2026-07-profile-picture.png"
+    alt     = "Jon Leithe"
+    class   = "about-profile"
+>}}
 
-# About
-
-Welcome to my personal engineering website.
+# Welcome to my personal engineering website.
 
 I work as a Systems Engineer at the Norwegian Mapping Authority (Kartverket), focusing on scientific infrastructure, precision measurement systems, and Linux-based technical environments.
 
-I am currently pursuing an MSc in Aerospace Engineering at UiT – The Arctic University of Norway.
+I was accepted as a student at UiT – The Arctic University of Norway, where I this August will start pursuing an MSc in Aerospace Engineering.
 
 This website serves as my engineering notebook, project portfolio, and professional homepage.
