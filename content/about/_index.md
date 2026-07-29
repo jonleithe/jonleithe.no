@@ -12,7 +12,11 @@ title = 'About'
 
 # Welcome to my engineering notebook.
 
-I work as a Systems Engineer at the Norwegian Mapping Authority (Kartverket), focusing on scientific infrastructure, precision measurement systems, and Linux-based technical environments.
+I work as a Systems Engineer at the
+{{< rawhtml >}}
+<a href="https://www.kartverket.no/en/about-kartverket/geodetic-earth-observatory" target="_blank" rel="noopener noreferrer">Norwegian Mapping Authority (Kartverket)</a>
+{{< /rawhtml >}}
+, focusing on scientific infrastructure, precision measurement systems, and Linux-based technical environments.
 
 In August 2026 I begin an MSc in Aerospace Engineering at UiT – The Arctic University of Norway.
 
