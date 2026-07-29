@@ -10,10 +10,10 @@ title = 'About'
     class   = "about-profile"
 >}}
 
-# Welcome to my personal engineering website.
+# Welcome to my engineering notebook.
 
 I work as a Systems Engineer at the Norwegian Mapping Authority (Kartverket), focusing on scientific infrastructure, precision measurement systems, and Linux-based technical environments.
 
-I was accepted as a student at UiT – The Arctic University of Norway, where I this August will start pursuing an MSc in Aerospace Engineering.
+In August 2026 I begin an MSc in Aerospace Engineering at UiT – The Arctic University of Norway.
 
-This website serves as my engineering notebook, project portfolio, and professional homepage.
+Project Polaris is my long-term engineering notebook, documenting my studies, software projects, and technical explorations.
