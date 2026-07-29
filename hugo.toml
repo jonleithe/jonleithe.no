@@ -9,30 +9,39 @@ ShowReadingTime = true
 hideFooter      = false
 
 [params.profileMode]
-enabled = true
-title   = "Jon Leithe"
-subtitle = "Systems Engineer · Scientific Infrastructure · Software Development · Linux"
+enabled     = true
+title       = "Jon Leithe"
+subtitle    = "Systems Engineer · Scientific Infrastructure · Software Development · Linux"
+imageUrl    = "/images/2026-07-profile-picture.png"
+imageTitle  = "Jon Leithe"
+imageWidth  = 200
+imageHeight = 200
 
+
+### Configure buttons ##########################################################
 [[params.profileMode.buttons]]
 name    = "About"
 url     = "/about/"
+################################################################################
 
+### Configuring the main menu ##################################################
 [[menu.main]]
 name = "About"
 url = "/about/"
 weight = 10
 
-[[menu.main]]
-name = "Projects"
-url = "/projects/"
-weight = 20
+#[[menu.main]]
+#name = "Projects"
+#url = "/projects/"
+#weight = 20
 
-[[menu.main]]
-name = "Engineering Notes"
-url = "/notes/"
-weight = 30
+#[[menu.main]]
+#name = "Engineering Notes"
+#url = "/notes/"
+#weight = 30
 
-[[menu.main]]
-name = "CV"
-url = "/cv/"
-weight = 40
+#[[menu.main]]
+#name = "CV"
+#url = "/cv/"
+#weight = 40
+################################################################################
