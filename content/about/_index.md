@@ -8,6 +8,7 @@ title = 'About'
     src     = "/images/2026-07-profile-picture.png"
     alt     = "Jon Leithe"
     class   = "about-profile"
+    link    = "/"
 >}}
 
 # Welcome to my engineering notebook.

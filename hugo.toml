@@ -12,10 +12,11 @@ hideFooter      = false
 enabled     = true
 title       = "Jon Leithe"
 subtitle    = "Systems Engineer · Scientific Infrastructure · Software Development · Linux"
-imageUrl    = "/images/2026-07-profile-picture.png"
+imageUrl    = "/images/2026-07-profile-sketch.png"
 imageTitle  = "Jon Leithe"
-imageWidth  = 200
-imageHeight = 200
+imageWidth  = 250
+imageHeight = 250
+
 
 
 ### Configure buttons ##########################################################
@@ -23,6 +24,8 @@ imageHeight = 200
 name    = "About"
 url     = "/about/"
 ################################################################################
+
+
 
 ### Configuring the main menu ##################################################
 [[menu.main]]
@@ -35,10 +38,10 @@ weight = 10
 #url = "/projects/"
 #weight = 20
 
-#[[menu.main]]
-#name = "Engineering Notes"
-#url = "/notes/"
-#weight = 30
+[[menu.main]]
+name = "Engineering Notes"
+url = "/notes/"
+weight = 30
 
 #[[menu.main]]
 #name = "CV"

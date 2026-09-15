@@ -5,20 +5,20 @@
 /*** Custom CSS for the about page ********************************************/
 .about-profile {
     float   : left;
-    width   : 100px;
+    width   : 75px;
     margin  : 0 1.5rem 0.75rem 0;
 }
 
 .about-profile img {
-    width   : 100%;
+    width   : 75px;
     height  : auto;
     margin  : 0;
 }
 
 @media (max-width: 600px) {
     .about-profile {
-        float   : none;
-        width   : 160px;
+        float   : left;
+        width   : 75px;
         margin  : 0 auto 1.5rem;
     }
 }
