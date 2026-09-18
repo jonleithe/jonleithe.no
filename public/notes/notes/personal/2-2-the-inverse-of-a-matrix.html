@@ -280,6 +280,30 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Determinants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cramer’s Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants and Linear Transformations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants as Area or Volume</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coordinate Systems in R²</span></a>
   </div>
@@ -299,7 +323,12 @@ window.Quarto = {
   <li><a href="#verifying-an-inverse" id="toc-verifying-an-inverse" class="nav-link active" data-scroll-target="#verifying-an-inverse"><span class="header-section-number">1</span> Verifying an inverse</a></li>
   <li><a href="#inverse-of-a-two-by-two-matrix" id="toc-inverse-of-a-two-by-two-matrix" class="nav-link" data-scroll-target="#inverse-of-a-two-by-two-matrix"><span class="header-section-number">2</span> Inverse of a two-by-two matrix</a></li>
   <li><a href="#solving-a-linear-system-with-an-inverse" id="toc-solving-a-linear-system-with-an-inverse" class="nav-link" data-scroll-target="#solving-a-linear-system-with-an-inverse"><span class="header-section-number">3</span> Solving a linear system with an inverse</a></li>
-  <li><a href="#finding-an-inverse-by-row-reduction" id="toc-finding-an-inverse-by-row-reduction" class="nav-link" data-scroll-target="#finding-an-inverse-by-row-reduction"><span class="header-section-number">4</span> Finding an inverse by row reduction</a></li>
+  <li><a href="#engineering-interpretation-flexibility-and-stiffness" id="toc-engineering-interpretation-flexibility-and-stiffness" class="nav-link" data-scroll-target="#engineering-interpretation-flexibility-and-stiffness"><span class="header-section-number">4</span> Engineering interpretation: flexibility and stiffness</a></li>
+  <li><a href="#finding-an-inverse-by-row-reduction" id="toc-finding-an-inverse-by-row-reduction" class="nav-link" data-scroll-target="#finding-an-inverse-by-row-reduction"><span class="header-section-number">5</span> Finding an inverse by row reduction</a></li>
+  <li><a href="#properties-of-inverse-matrices" id="toc-properties-of-inverse-matrices" class="nav-link" data-scroll-target="#properties-of-inverse-matrices"><span class="header-section-number">6</span> Properties of inverse matrices</a></li>
+  <li><a href="#elementary-matrices" id="toc-elementary-matrices" class="nav-link" data-scroll-target="#elementary-matrices"><span class="header-section-number">7</span> Elementary matrices</a></li>
+  <li><a href="#invertibility-and-row-equivalence" id="toc-invertibility-and-row-equivalence" class="nav-link" data-scroll-target="#invertibility-and-row-equivalence"><span class="header-section-number">8</span> Invertibility and row equivalence</a></li>
+  <li><a href="#worked-example-finding-a-three-by-three-inverse" id="toc-worked-example-finding-a-three-by-three-inverse" class="nav-link" data-scroll-target="#worked-example-finding-a-three-by-three-inverse"><span class="header-section-number">9</span> Worked example: finding a three-by-three inverse</a></li>
   </ul>
 </nav>
     </div>
@@ -337,7 +366,7 @@ window.Quarto = {
 </header>
 
 
-<p>An inverse matrix reverses the transformation performed by a matrix. This is the matrix analogue of multiplying a nonzero scalar by its reciprocal</p>
+<p>An inverse matrix reverses the transformation performed by a matrix. This is the matrix analogue of multiplying a nonzero scalar by its reciprocal. For example, the inverse of <span class="math inline">\(3\)</span> is <span class="math inline">\(\frac{1}{3}\)</span>, since multiplying in either order returns <span class="math inline">\(1\)</span>.</p>
 <p>An <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is <strong>invertible</strong> if there is an <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(C\)</span> such that</p>
 <p><span class="math display">\[
 CA=I_n
@@ -350,6 +379,18 @@ A^{-1}A=I_n
 \qquad\text{and}\qquad
 AA^{-1}=I_n
 \]</span></p>
+<p>To see why the inverse is unique, suppose that <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are both inverses of <span class="math inline">\(A\)</span>. Then</p>
+<p><span class="math display">\[
+\begin{aligned}
+B
+&amp;= BI_n \\
+&amp;= B(AC) \\
+&amp;= (BA)C \\
+&amp;= I_nC \\
+&amp;= C.
+\end{aligned}
+\]</span></p>
+<p>There is no general operation of matrix division. Matrix multiplication is not commutative, so the order in which an inverse is applied matters. A two-sided inverse also requires <span class="math inline">\(A\)</span> to be square.</p>
 <p>A matrix that is not invertible is called <strong>singular</strong>. An invertible matrix is also called <strong>nonsingular</strong></p>
 <section id="verifying-an-inverse" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="verifying-an-inverse"><span class="header-section-number">1</span> Verifying an inverse</h2>
@@ -428,6 +469,17 @@ C=A^{-1}
 </section>
 <section id="inverse-of-a-two-by-two-matrix" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="inverse-of-a-two-by-two-matrix"><span class="header-section-number">2</span> Inverse of a two-by-two matrix</h2>
+<div id="nte-inverse-two-by-two" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.4 — Inverse of a Two-by-Two Matrix">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1: Theorem 2.2.4 — Inverse of a Two-by-Two Matrix
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.135</p>
 <p>For a matrix</p>
 <p><span class="math display">\[
 A=
@@ -450,15 +502,35 @@ d &amp; -b \\
 -c &amp; a
 \end{bmatrix}
 \]</span></p>
-<p>If <span class="math inline">\(ad-bc=0\)</span>, division by the determinant is impossible and <span class="math inline">\(A\)</span> is singular</p>
+<p>If <span class="math inline">\(ad-bc=0\)</span>, division by the determinant is impossible and <span class="math inline">\(A\)</span> is singular.</p>
+</div>
+</div>
+<p>The determinant therefore acts as a quick test for invertibility in the two-by-two case. A zero determinant means that the transformation collapses the plane into a lower-dimensional set, so no transformation can undo it.</p>
 </section>
 <section id="solving-a-linear-system-with-an-inverse" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="solving-a-linear-system-with-an-inverse"><span class="header-section-number">3</span> Solving a linear system with an inverse</h2>
-<p>If <span class="math inline">\(A\)</span> is invertible, then the equation</p>
+<div id="nte-solving-with-an-inverse" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.5 — Solving a System with an Inverse">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2: Theorem 2.2.5 — Solving a System with an Inverse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.136</p>
+<p>If <span class="math inline">\(A\)</span> is an invertible <span class="math inline">\(n\times n\)</span> matrix, then for every <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>, the equation</p>
 <p><span class="math display">\[
 A\vec{x}=\vec{b}
 \]</span></p>
-<p>has a unique solution for every <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>. Multiplying both sides on the left by <span class="math inline">\(A^{-1}\)</span> gives</p>
+<p>has the unique solution</p>
+<p><span class="math display">\[
+\vec{x}=A^{-1}\vec{b}.
+\]</span></p>
+</div>
+</div>
+<p>Multiplying both sides on the left by <span class="math inline">\(A^{-1}\)</span> gives</p>
 <p><span class="math display">\[
 \begin{aligned}
 A^{-1}A\vec{x} &amp;= A^{-1}\vec{b} \\
@@ -535,8 +607,47 @@ A^{-1}
 \end{aligned}
 \]</span></p>
 </section>
-<section id="finding-an-inverse-by-row-reduction" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="finding-an-inverse-by-row-reduction"><span class="header-section-number">4</span> Finding an inverse by row reduction</h2>
+<section id="engineering-interpretation-flexibility-and-stiffness" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="engineering-interpretation-flexibility-and-stiffness"><span class="header-section-number">4</span> Engineering interpretation: flexibility and stiffness</h2>
+<p>Inverse matrices appear naturally in structural models. Consider a horizontal elastic beam supported at both ends, with forces applied at three points. <a href="#fig-elastic-beam-deflection" class="quarto-xref">Figure&nbsp;1</a> shows the force and deflection coordinates used in this model. Let</p>
+<div id="fig-elastic-beam-deflection" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elastic-beam-deflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../images/elastic-beam-deflection-hand-drawn-white-grid.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:85.0%" data-fig-pos="H">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elastic-beam-deflection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A horizontal elastic beam supported at both ends. The downward forces <span class="math inline">\(f_1\)</span>, <span class="math inline">\(f_2\)</span>, and <span class="math inline">\(f_3\)</span> produce the vertical deflections <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span>, and <span class="math inline">\(y_3\)</span> at the three measurement points.
+</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\vec{f}=
+\begin{bmatrix}
+f_1 \\
+f_2 \\
+f_3
+\end{bmatrix}
+\qquad\text{and}\qquad
+\vec{y}=
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+y_3
+\end{bmatrix}
+\]</span></p>
+<p>list the applied forces and the corresponding vertical deflections. In a linear elastic model, a <strong>flexibility matrix</strong> <span class="math inline">\(D\)</span> relates them by</p>
+<p><span class="math display">\[
+\vec{y}=D\vec{f}.
+\]</span></p>
+<p>Each column of <span class="math inline">\(D\)</span> describes the deflections caused by a unit force at one point while the other applied forces are zero. If <span class="math inline">\(D\)</span> is invertible, its inverse is the <strong>stiffness matrix</strong></p>
+<p><span class="math display">\[
+\vec{f}=D^{-1}\vec{y}.
+\]</span></p>
+<p>The columns of <span class="math inline">\(D^{-1}\)</span> have the complementary interpretation: the <span class="math inline">\(i\)</span>th column gives the forces required to produce a unit deflection at point <span class="math inline">\(i\)</span> and zero deflection at the other measured points. The units also reflect the physical meaning: flexibility may be measured in deflection per unit force, whereas stiffness is measured in force per unit deflection.</p>
+<p>This is a useful engineering view of an inverse. The same model can answer two different questions: “what deflection results from these loads?” and “what loads are needed to obtain this deflection?”</p>
+</section>
+<section id="finding-an-inverse-by-row-reduction" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="finding-an-inverse-by-row-reduction"><span class="header-section-number">5</span> Finding an inverse by row reduction</h2>
 <p>For larger matrices, an inverse can be found by augmenting <span class="math inline">\(A\)</span> with the identity matrix</p>
 <p><span class="math display">\[
 \left[A\mid I_n\right]
@@ -633,6 +744,240 @@ A^{-1}A
 \end{bmatrix}
 =I_3
 \end{aligned}
+\]</span></p>
+</section>
+<section id="properties-of-inverse-matrices" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="properties-of-inverse-matrices"><span class="header-section-number">6</span> Properties of inverse matrices</h2>
+<p>The inverse operation undoes a transformation. Applying it twice must therefore recover the original transformation. In addition, a product of invertible matrices is invertible, but the order of its inverse is reversed.</p>
+<div id="nte-inverse-properties" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.6 — Properties of Inverse Matrices">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;3: Theorem 2.2.6 — Properties of Inverse Matrices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.137</p>
+<p>For invertible <span class="math inline">\(n\times n\)</span> matrices <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(A^{-1}\right)^{-1} &amp;= A, \\
+(AB)^{-1} &amp;= B^{-1}A^{-1}, \\
+\left(A^T\right)^{-1} &amp;= \left(A^{-1}\right)^T.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<p>The first identity follows directly from the definition: <span class="math inline">\(A\)</span> is a two-sided inverse of <span class="math inline">\(A^{-1}\)</span> because</p>
+<p><span class="math display">\[
+A^{-1}A=I_n
+\qquad\text{and}\qquad
+AA^{-1}=I_n.
+\]</span></p>
+<p>For the product identity, verify that <span class="math inline">\(B^{-1}A^{-1}\)</span> is a two-sided inverse of <span class="math inline">\(AB\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(AB)\left(B^{-1}A^{-1}\right)
+&amp;= A\left(BB^{-1}\right)A^{-1} \\
+&amp;= AI_nA^{-1} \\
+&amp;= I_n
+\end{aligned}
+\qquad\text{and}\qquad
+\begin{aligned}
+\left(B^{-1}A^{-1}\right)(AB)
+&amp;= B^{-1}\left(A^{-1}A\right)B \\
+&amp;= B^{-1}I_nB \\
+&amp;= I_n.
+\end{aligned}
+\]</span></p>
+<p>The reversed order is essential: <span class="math inline">\(A^{-1}B^{-1}\)</span> does not generally undo the transformation <span class="math inline">\(AB\)</span>. Finally, transposing the two identities for <span class="math inline">\(A^{-1}\)</span> gives</p>
+<p><span class="math display">\[
+\begin{aligned}
+A^T\left(A^{-1}\right)^T
+&amp;= \left(A^{-1}A\right)^T \\
+&amp;= I_n,
+\end{aligned}
+\]</span></p>
+<p>and similarly <span class="math inline">\(\left(A^{-1}\right)^TA^T=I_n\)</span>. Thus <span class="math inline">\(\left(A^{-1}\right)^T\)</span> is the inverse of <span class="math inline">\(A^T\)</span>.</p>
+</section>
+<section id="elementary-matrices" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="elementary-matrices"><span class="header-section-number">7</span> Elementary matrices</h2>
+<p>An <strong>elementary matrix</strong> is obtained by applying one elementary row operation to an identity matrix. Multiplying a matrix on the left by an elementary matrix performs that same row operation on the matrix.</p>
+<p>For example, let</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g &amp; h &amp; i
+\end{bmatrix}
+\]</span></p>
+<p>and define</p>
+<p><span class="math display">\[
+E_1=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+-4 &amp; 0 &amp; 1
+\end{bmatrix}
+\qquad
+E_2=
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\qquad
+E_3=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 5
+\end{bmatrix}.
+\]</span></p>
+<p>Their products with <span class="math inline">\(A\)</span> make the three types of elementary row operation visible:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E_1A
+&amp;=
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+g-4a &amp; h-4b &amp; i-4c
+\end{bmatrix}
+&amp;&amp;\text{corresponding to } R_3\leftarrow R_3-4R_1, \\
+E_2A
+&amp;=
+\begin{bmatrix}
+d &amp; e &amp; f \\
+a &amp; b &amp; c \\
+g &amp; h &amp; i
+\end{bmatrix}
+&amp;&amp;\text{corresponding to } R_1\leftrightarrow R_2, \\
+E_3A
+&amp;=
+\begin{bmatrix}
+a &amp; b &amp; c \\
+d &amp; e &amp; f \\
+5g &amp; 5h &amp; 5i
+\end{bmatrix}
+&amp;&amp;\text{corresponding to } R_3\leftarrow 5R_3.
+\end{aligned}
+\]</span></p>
+<p>Several row operations can be combined by multiplying their elementary matrices. For instance, <span class="math inline">\(E_2E_1A\)</span> first performs <span class="math inline">\(R_3\leftarrow R_3-4R_1\)</span> and then swaps rows one and two. This is the basis for the row-reduction method above: if elementary matrices reduce <span class="math inline">\(A\)</span> to the identity, their product is <span class="math inline">\(A^{-1}\)</span>. See <a href="../../notes/personal/2-2-elementary-matrices.html">Elimination Matrices</a> for a complete inverse calculation using this approach.</p>
+</section>
+<section id="invertibility-and-row-equivalence" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="invertibility-and-row-equivalence"><span class="header-section-number">8</span> Invertibility and row equivalence</h2>
+<p>Elementary matrices are themselves invertible. To invert an elementary matrix, reverse the row operation used to create it. For the matrix <span class="math inline">\(E_1\)</span> above, the operation is <span class="math inline">\(R_3\leftarrow R_3-4R_1\)</span>. Its reverse is <span class="math inline">\(R_3\leftarrow R_3+4R_1\)</span>, so</p>
+<p><span class="math display">\[
+E_1^{-1}=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+4 &amp; 0 &amp; 1
+\end{bmatrix}.
+\]</span></p>
+<p>Indeed, applying the reverse operation to <span class="math inline">\(E_1\)</span> returns the identity matrix. Equivalently, <span class="math inline">\(E_1^{-1}E_1=E_1E_1^{-1}=I_3\)</span>.</p>
+<div id="nte-row-equivalence-invertibility" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.7 — Row-Equivalence Criterion for Invertibility">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;4: Theorem 2.2.7 — Row-Equivalence Criterion for Invertibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.140</p>
+<p>An <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is invertible if and only if it is <strong>row equivalent</strong> to <span class="math inline">\(I_n\)</span>. Moreover, any sequence of elementary row operations that reduces <span class="math inline">\(A\)</span> to <span class="math inline">\(I_n\)</span> transforms <span class="math inline">\(I_n\)</span> into <span class="math inline">\(A^{-1}\)</span>.</p>
+</div>
+</div>
+<p>To see why, suppose the row operations correspond to elementary matrices <span class="math inline">\(E_1,E_2,\ldots,E_k\)</span>. If they reduce <span class="math inline">\(A\)</span> to the identity, then</p>
+<p><span class="math display">\[
+E_k\cdots E_2E_1A=I_n.
+\]</span></p>
+<p>Therefore the product of elementary matrices is <span class="math inline">\(A^{-1}\)</span>. Applying the same operations to the identity gives</p>
+<p><span class="math display">\[
+E_k\cdots E_2E_1I_n=A^{-1}.
+\]</span></p>
+<p>This result gives a practical test and algorithm for finding an inverse:</p>
+<ol type="1">
+<li>Form the augmented matrix <span class="math inline">\(\left[A\mid I_n\right]\)</span>.</li>
+<li>Row reduce its left side.</li>
+<li>If the result is <span class="math inline">\(\left[I_n\mid A^{-1}\right]\)</span>, then <span class="math inline">\(A\)</span> is invertible. Otherwise, <span class="math inline">\(A\)</span> is singular and has no inverse.</li>
+</ol>
+</section>
+<section id="worked-example-finding-a-three-by-three-inverse" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="worked-example-finding-a-three-by-three-inverse"><span class="header-section-number">9</span> Worked example: finding a three-by-three inverse</h2>
+<p>Find the inverse of</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+0 &amp; 1 &amp; 2 \\
+1 &amp; 0 &amp; 3 \\
+4 &amp; -3 &amp; 8
+\end{bmatrix}.
+\]</span></p>
+<p>Augment <span class="math inline">\(A\)</span> with <span class="math inline">\(I_3\)</span> and apply row operations to both sides:</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|ccc}
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+4 &amp; -3 &amp; 8 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right].
+\]</span></p>
+<p>First swap the first two rows, eliminate below the first pivot, and then eliminate below the second pivot:</p>
+<p><span class="math display">\[
+\begin{aligned}
+R_1&amp;\leftrightarrow R_2, \\
+R_3&amp;\leftarrow R_3-4R_1, \\
+R_3&amp;\leftarrow R_3+3R_2,
+\end{aligned}
+\qquad
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 3 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; 3 &amp; -4 &amp; 1
+\end{array}
+\right].
+\]</span></p>
+<p>Scale the third pivot and clear the entries above it:</p>
+<p><span class="math display">\[
+\begin{aligned}
+R_3&amp;\leftarrow \frac{1}{2}R_3, \\
+R_1&amp;\leftarrow R_1-3R_3, \\
+R_2&amp;\leftarrow R_2-2R_3.
+\end{aligned}
+\]</span></p>
+<p>This gives</p>
+<p><span class="math display">\[
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; -\frac{9}{2} &amp; 7 &amp; -\frac{3}{2} \\
+0 &amp; 1 &amp; 0 &amp; -2 &amp; 4 &amp; -1 \\
+0 &amp; 0 &amp; 1 &amp; \frac{3}{2} &amp; -2 &amp; \frac{1}{2}
+\end{array}
+\right]
+=
+\left[I_3\mid A^{-1}\right].
+\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+A^{-1}=
+\begin{bmatrix}
+-\frac{9}{2} &amp; 7 &amp; -\frac{3}{2} \\
+-2 &amp; 4 &amp; -1 \\
+\frac{3}{2} &amp; -2 &amp; \frac{1}{2}
+\end{bmatrix}.
+\]</span></p>
+<p>Because the left side reduces to <span class="math inline">\(I_3\)</span>, <span class="math inline">\(A\)</span> is invertible. As a check,</p>
+<p><span class="math display">\[
+A A^{-1}=I_3.
 \]</span></p>
 
 

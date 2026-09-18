@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Leithe">
-<meta name="dcterms.date" content="2026-07-20">
+<meta name="dcterms.date" content="2026-09-14">
 
-<title>Vectors and Spaces – Project Polaris Academy</title>
+<title>Cramer’s Rule – Project Polaris Academy</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,25 +31,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<link href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" rel="next">
-<link href="../../../../notes/personal/00-theorems.html" rel="prev">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-05da614ce313ea6c1d550ae461cd086e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../notes/personal/3-3-determinants-and-linear-transformations.html" rel="next">
+<link href="../../notes/personal/3-2-properties-of-determinants.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-05da614ce313ea6c1d550ae461cd086e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,7 +117,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Project Polaris Academy</span>
     </a>
   </div>
@@ -142,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Khan Academy — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/personal/06-distance-between-planes.html">Personal notes</a></li><li class="breadcrumb-item"><a href="../../notes/personal/3-3-cramers-rule.html">Cramer’s Rule</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,13 +164,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/00-theorems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/00-theorems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Theorems</span></a>
   </div>
 </li>
@@ -185,31 +185,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vectors and Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Combinations and Span</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/03-linear-dependence-and-independence.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/03-linear-dependence-and-independence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Dependence and Independence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/04-subspaces-and-the-basis-for-a-subspace.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/04-subspaces-and-the-basis-for-a-subspace.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subspaces and the Basis for a Subspace</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/05-vector-dot-and-cross-products.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/05-vector-dot-and-cross-products.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector Dot and Cross Products</span></a>
   </div>
 </li>
@@ -226,85 +226,85 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/06-distance-between-planes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/06-distance-between-planes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Distance Between Planes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/07-point-distance-to-plane.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/07-point-distance-to-plane.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Point Distance to a Plane</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/1-2-row-reduction-and-echelon-forms.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/1-2-row-reduction-and-echelon-forms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elimination With Matrices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/1-8-linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/1-8-linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-1-matrix-multiplication.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-1-matrix-multiplication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrix Multiplication</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-2-elementary-matrices.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-2-elementary-matrices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elimination Matrices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-2-the-inverse-of-a-matrix.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inverses</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-9-dimension-and-rank.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-9-dimension-and-rank.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dimension and Rank</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-1-introduction-to-determinants.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-1-introduction-to-determinants.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Properties of Determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Cramer’s Rule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Determinants and Linear Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Determinants as Area or Volume</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coordinate Systems in R²</span></a>
   </div>
 </li>
@@ -320,22 +320,30 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="header-section-number">1</span> TL;DR</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2</span> Example</a></li>
-  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation"><span class="header-section-number">3</span> Notation</a></li>
-  <li><a href="#real-coordinate-spaces" id="toc-real-coordinate-spaces" class="nav-link" data-scroll-target="#real-coordinate-spaces"><span class="header-section-number">4</span> Real coordinate spaces</a></li>
-  <li><a href="#addition" id="toc-addition" class="nav-link" data-scroll-target="#addition"><span class="header-section-number">5</span> Addition</a></li>
-  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">6</span> Scalar multiplication</a></li>
-  <li><a href="#parametric-representation-of-lines" id="toc-parametric-representation-of-lines" class="nav-link" data-scroll-target="#parametric-representation-of-lines"><span class="header-section-number">7</span> Parametric representation of lines</a></li>
+  <li><a href="#replacing-one-column" id="toc-replacing-one-column" class="nav-link active" data-scroll-target="#replacing-one-column"><span class="header-section-number">1</span> Replacing one column</a></li>
+  <li><a href="#cramers-rule" id="toc-cramers-rule" class="nav-link" data-scroll-target="#cramers-rule"><span class="header-section-number">2</span> Cramer’s rule</a>
+  <ul class="collapse">
+  <li><a href="#proof-using-the-determinant-of-a-product" id="toc-proof-using-the-determinant-of-a-product" class="nav-link" data-scroll-target="#proof-using-the-determinant-of-a-product"><span class="header-section-number">2.1</span> Proof using the determinant of a product</a></li>
+  <li><a href="#example-1-a-two-by-two-system" id="toc-example-1-a-two-by-two-system" class="nav-link" data-scroll-target="#example-1-a-two-by-two-system"><span class="header-section-number">2.2</span> Example 1: a two-by-two system</a></li>
+  </ul></li>
+  <li><a href="#application-to-engineering-a-parameter-dependent-system" id="toc-application-to-engineering-a-parameter-dependent-system" class="nav-link" data-scroll-target="#application-to-engineering-a-parameter-dependent-system"><span class="header-section-number">3</span> Application to engineering: a parameter-dependent system</a>
+  <ul class="collapse">
+  <li><a href="#example-2-determine-when-the-solution-is-unique" id="toc-example-2-determine-when-the-solution-is-unique" class="nav-link" data-scroll-target="#example-2-determine-when-the-solution-is-unique"><span class="header-section-number">3.1</span> Example 2: determine when the solution is unique</a></li>
+  </ul></li>
+  <li><a href="#a-formula-for-the-inverse" id="toc-a-formula-for-the-inverse" class="nav-link" data-scroll-target="#a-formula-for-the-inverse"><span class="header-section-number">4</span> A formula for the inverse</a>
+  <ul class="collapse">
+  <li><a href="#example-3-a-three-by-three-inverse" id="toc-example-3-a-three-by-three-inverse" class="nav-link" data-scroll-target="#example-3-a-three-by-three-inverse"><span class="header-section-number">4.1</span> Example 3: a three-by-three inverse</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Khan Academy — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/personal/06-distance-between-planes.html">Personal notes</a></li><li class="breadcrumb-item"><a href="../../notes/personal/3-3-cramers-rule.html">Cramer’s Rule</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Vectors and Spaces</h1>
+<h1 class="title">Cramer’s Rule</h1>
 </div>
 
 
@@ -352,7 +360,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 20, 2026</p>
+      <p class="date">September 14, 2026</p>
     </div>
   </div>
   
@@ -364,263 +372,253 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
+<p>Cramer’s rule expresses each component of the solution to a linear system as a ratio of determinants. It connects solving systems with the determinant properties developed in <a href="../../notes/personal/3-2-properties-of-determinants.html">Properties of Determinants</a>, and leads to a formula for the inverse of a matrix.</p>
+<p>This note follows the first five pages of the handwritten section 3.3 notes and covers Cramer’s rule and the inverse formula. The next pages develop the geometric interpretation in <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html">Determinants as Area or Volume</a>. They continue in <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html">Determinants and Linear Transformations</a>.</p>
+<section id="replacing-one-column" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="replacing-one-column"><span class="header-section-number">1</span> Replacing one column</h2>
+<p>Write an <span class="math inline">\(n\times n\)</span> matrix in terms of its columns:</p>
 <p><span class="math display">\[
-\def\blueD#1{\color{blue}{#1}}
-\def\maroonD#1{\color{maroon}{#1}}
-\def\greenD#1{\color{green}{#1}}
-\def\redD#1{\color{red}{#1}}
-\def\goldD#1{\color{orange}{#1}}
+A=[\vec{a}_1\ \cdots\ \vec{a}_n].
 \]</span></p>
-</div>
-<p>Source: <a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy — Vectors and spaces</a></p>
-<p>Vectors are used to represent many things around us: from forces like gravity, acceleration, friction, stress and strain on structures, to computer graphics used in almost all modern-day movies and video games. Vectors are an important concept, not just in math, but in physics, engineering, and computer graphics, so you’re likely to see them again in other subjects.</p>
-<p>Geometrically, a vector can be represented by a directed line segment, or arrow, whose direction indicates the vector’s direction and whose length represents its magnitude. Vectors are used, for example, to describe the velocity of a moving object.</p>
-<p>The zero vector has magnitude zero and no defined direction. Vectors may also belong to a one-dimensional vector space. The zero vector is defined to be orthogonal to any other vector</p>
-<section id="tldr" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1</span> TL;DR</h2>
-<p>Some tl;dr related content</p>
-</section>
-<section id="example" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="example"><span class="header-section-number">2</span> Example</h2>
-<p>Suppose an object is moving at a speed of <span class="math inline">\(10\,\mathrm{m/s}\)</span>. If we also specify that it is moving generally towards north-east, we know both its speed and direction. Together, these define the object’s velocity. In physics, velocity is defined as the rate of change of position with respect to time.</p>
-<p>Translate this into a vector, and we get:</p>
-<ul>
-<li>the vector’s magnitude (or length) is <span class="math inline">\(10\,\mathrm{m/s}\)</span></li>
-<li>its direction is north-east</li>
-</ul>
-<p><a href="#fig-vectors-example" class="quarto-xref">Figure&nbsp;1</a> shows a vector drawn in standard form, which means from the origin (0, 0).</p>
-<div id="fig-vectors-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vectors-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vector-example-hand-drawn-polaris-warm-white-grid.png" class="img-fluid figure-img" style="width:40.0%" data-fig-pos="H">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectors-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Example of a vector <span class="math inline">\(\vec{v}\)</span> running from the origin to the point <span class="math inline">\((8, 6)\)</span>.
-</figcaption>
-</figure>
-</div>
-<p>For a vector <span class="math inline">\(\vec{v}=(a, b)\)</span>, the magnitude is calculated using the Pythagorean theorem:</p>
+<p>For <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>, define <span class="math inline">\(A_i(\vec{b})\)</span> to be the matrix obtained by replacing column <span class="math inline">\(i\)</span> of <span class="math inline">\(A\)</span> with <span class="math inline">\(\vec{b}\)</span>:</p>
 <p><span class="math display">\[
-\lVert\vec v\rVert=\sqrt{a^2+b^2}
+A_i(\vec{b})=
+[\vec{a}_1\ \cdots\ \vec{a}_{i-1}\ \vec{b}\ \vec{a}_{i+1}\ \cdots\ \vec{a}_n].
 \]</span></p>
-<p>In the example given, we have the velocity vector</p>
+<p>All other columns retain their original positions. For example,</p>
 <p><span class="math display">\[
-\vec{v}
-=
-\begin{bmatrix}
-8 \\
-6
-\end{bmatrix}
-\,\mathrm{m/s}
-\]</span></p>
-<p>that gives us the magnitude</p>
-<p><span class="math display">\[
-\lVert\vec v\rVert = \sqrt{8^2+6^2} = \sqrt{64+36} = \sqrt{100} = 10\,\mathrm{m/s}
-\]</span></p>
-<p>A vector’s magnitude is denoted <span class="math inline">\(\lVert\vec v \rVert\)</span>.</p>
-</section>
-<section id="notation" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="notation"><span class="header-section-number">3</span> Notation</h2>
-<p>Vectors can be written in several ways:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\vec{v}
-&amp;= (1, 2, 3) \\
-&amp;= \begin{bmatrix}1\\2\\3\end{bmatrix} \\
-&amp;= \blueD{\hat{\imath}}+2\maroonD{\hat{\jmath}}+3\greenD{\hat{k}}
-\end{aligned}
-\]</span></p>
-<p>A vector is often denoted by placing a small arrow above its name, as in <span class="math inline">\(\vec{v}\)</span>.</p>
-<p>Depending on the context, <span class="math inline">\((1,2,3)\)</span> can represent either a point or a vector. When it represents a position vector, the vector is drawn from the origin to the corresponding point. A free vector, however, may be translated without changing the vector.</p>
-<p>The second representation is called column-vector notation. In <span class="math inline">\(n\)</span> dimensions, a general column vector has the form</p>
-<p><span class="math display">\[
-\begin{bmatrix}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{bmatrix}
-\]</span></p>
-<p>The third notation expresses a vector as a linear combination of standard basis vectors. Each standard basis vector has magnitude one.</p>
-<p>In two dimensions, the standard basis vectors are <span class="math inline">\(\blueD{\hat{\imath}}=(1,0)\)</span> and <span class="math inline">\(\maroonD{\hat{\jmath}}=(0,1)\)</span>. They are pronounced “i-hat” and “j-hat”.</p>
-<p>In three dimensions, the standard basis vectors are <span class="math inline">\(\blueD{\hat{\imath}}=(1,0,0)\)</span>, <span class="math inline">\(\maroonD{\hat{\jmath}}=(0,1,0)\)</span>, and <span class="math inline">\(\greenD{\hat{k}}=(0,0,1)\)</span>.</p>
-<p>In <span class="math inline">\(\mathbb{R}^n\)</span>, the standard basis vectors are usually denoted <span class="math inline">\(\mathbf e_1,\ldots,\mathbf e_n\)</span>.</p>
-<p>This notation might make more sense once we cover vector addition.</p>
-<p>Coordinate vectors can have any finite number of components. The space <span class="math inline">\(\mathbb R^n\)</span> has dimension <span class="math inline">\(n\)</span>.</p>
-</section>
-<section id="real-coordinate-spaces" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="real-coordinate-spaces"><span class="header-section-number">4</span> Real coordinate spaces</h2>
-<p>When working with vectors, you will often encounter notation such as <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\(\mathbb{R}^3\)</span>. The symbol <span class="math inline">\(\mathbb{R}\)</span> denotes the set of real numbers, while the exponent specifies the number of coordinates.</p>
-<p>For example,</p>
-<p><span class="math display">\[
-\mathbb{R}^2
-=
-\{(x_1,x_2) \mid x_1,x_2 \in \mathbb{R}\}
-\]</span></p>
-<p>is the set of all ordered pairs of real numbers. Similarly,</p>
-<p><span class="math display">\[
-\mathbb{R}^3
-=
-\{(x_1,x_2,x_3) \mid x_1,x_2,x_3 \in \mathbb{R}\}
-\]</span></p>
-<p>is the set of all ordered triples of real numbers. More generally, <span class="math inline">\(\mathbb{R}^n\)</span> is the set of all ordered <span class="math inline">\(n\)</span>-tuples of real numbers.</p>
-<p>An element of <span class="math inline">\(\mathbb{R}^n\)</span> is a vector and can be written as either a tuple or a column vector:</p>
-<p><span class="math display">\[
-\vec{v}
-=
-(v_1,v_2,\ldots,v_n)
-=
-\begin{bmatrix}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{bmatrix}
-\]</span></p>
-<p>The space <span class="math inline">\(\mathbb{R}^2\)</span> is not itself a vector; it is a vector space of dimension two. A vector <span class="math inline">\(\vec{v}\in\mathbb{R}^2\)</span> has two components and can be represented in the coordinate plane. Likewise, a vector <span class="math inline">\(\vec{v}\in\mathbb{R}^3\)</span> has three components and can be represented in three-dimensional space.</p>
-<p>Depending on the context, the same tuple can describe either a point or the position vector from the origin to that point.</p>
-</section>
-<section id="addition" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="addition"><span class="header-section-number">5</span> Addition</h2>
-<p>Vectors can be added and subtracted provided that they belong to the same vector space. In <span class="math inline">\(\mathbb R^n\)</span>, this means that they must have the same number of components. We add two vectors by adding their corresponding components. Say we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\vec{v} &amp;= (v_1, v_2, \dots, v_n) \\
-\vec{w} &amp;= (w_1, w_2, \dots, w_n)
-\end{aligned}
-\]</span></p>
-<p>then their sum is:</p>
-<p><span class="math display">\[
-\vec{v}+\vec{w}
-= (v_1+w_1, v_2+w_2, \dots, v_n+w_n)
-\]</span></p>
-<p>The result of the addition (or subtraction) is another vector in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<p>Geometrically, <span class="math inline">\(\greenD{\vec{v}}+\redD{\vec{w}}\)</span> can be visualized by translating <span class="math inline">\(\redD{\vec{w}}\)</span> so that its tail lies at the tip of <span class="math inline">\(\greenD{\vec{v}}\)</span>. The resulting vector spans from the tail of <span class="math inline">\(\greenD{\vec{v}}\)</span> to the tip of the translated <span class="math inline">\(\redD{\vec{w}}\)</span>. The following example illustrates this.</p>
-<p>Suppose we have two vectors:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\greenD{\vec{v}} &amp;\greenD{= \begin{bmatrix} 3 \\ 1 \end{bmatrix}} \\
-\redD{\vec{w}} &amp;\redD{= \begin{bmatrix} -2 \\ 3 \end{bmatrix}}
-\end{aligned}
-\]</span></p>
-<p>Then we get:</p>
-<p><span class="math display">\[
-\greenD{\vec{v}}+\redD{\vec{w}}
-=
-\left[
-\begin{aligned}
-\greenD{3} &amp;{}+\redD{(-2)} \\
-\greenD{1} &amp;{}+\redD{3}
-\end{aligned}
-\right]
-=
-\begin{bmatrix}
-\goldD{1} \\
-\goldD{4}
-\end{bmatrix}
-\]</span></p>
-<p>The resulting vector is shown in orange in <a href="#fig-vector-add-example" class="quarto-xref">Figure&nbsp;2</a>.</p>
-<p>Similarly, looking at <a href="#fig-vector-add-example" class="quarto-xref">Figure&nbsp;2</a>, we can argue that <span class="math inline">\(\vec{w} = (\vec{v}+\vec{w}) - \vec{v}\)</span>. Said in another way: what do I have to add to <span class="math inline">\(\vec{v}\)</span> to get to <span class="math inline">\((\vec{v}+\vec{w})\)</span>?</p>
-<div id="fig-vector-add-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vector-add-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vector-2d-addition-polaris-hand-drawn-white-grid.png" class="img-fluid figure-img" style="width:50.0%" data-fig-pos="H">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-add-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Two-dimensional vector addition.
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="scalar-multiplication" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">6</span> Scalar multiplication</h2>
-<p>A scalar is simply a number. Scalar multiplication means multiplying each component of a vector by the scalar. If <span class="math inline">\(c\in\mathbb R\)</span> and <span class="math inline">\(\vec{v}=(v_1,\ldots,v_n)\)</span>, then</p>
-<p><span class="math display">\[
-c\vec v=(cv_1,\ldots,cv_n).
-\]</span></p>
-<p>The resulting vector is collinear with the original vector, and its magnitude is <span class="math display">\[
-\lVert c\vec v\rVert=|c|\lVert\vec v\rVert.
-\]</span></p>
-<p>If <span class="math inline">\(c&gt;0\)</span>, the direction remains the same; if <span class="math inline">\(c&lt;0\)</span>, the direction is reversed. If <span class="math inline">\(c=0\)</span>, the result is the zero vector.</p>
-</section>
-<section id="parametric-representation-of-lines" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="parametric-representation-of-lines"><span class="header-section-number">7</span> Parametric representation of lines</h2>
-<p>During Algebra I, we learnt that non-vertical lines could be represented by:</p>
-<p><span class="math display">\[
-y=mx+b
-\]</span></p>
-<p>where <span class="math inline">\(m\)</span> is the slope and <span class="math inline">\(b\)</span> is the <span class="math inline">\(y\)</span>-intercept. This form cannot represent vertical lines and does not generalise conveniently to higher-dimensional spaces. Parametric representations overcome both limitations.</p>
-<p>Looking at <a href="#fig-vector-parametrization-004" class="quarto-xref">Figure&nbsp;3</a>, suppose <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> are the position vectors of two distinct points along the dotted line <span class="math inline">\(L\)</span>. The displacement vector pointing from <span class="math inline">\(\vec{a}\)</span> to <span class="math inline">\(\vec{b}\)</span> is:</p>
-<p><span class="math display">\[
-\vec{c} = {\vec{b} - \vec{a}}
-\]</span></p>
-<p>Adding every scalar multiple of <span class="math inline">\(\vec{c}\)</span> to <span class="math inline">\(\vec{a}\)</span> gives every point on the line:</p>
-<p><span class="math display">\[
-L
-=
-\{
-\vec{a}
-+
-\lambda
-\cdot
-\vec{c}
-\mid
-\lambda
-\in
-\mathbb{R}
-\}
-\]</span></p>
-<p>This gives: <span class="math display">\[
-\lambda=0 \Longrightarrow \vec{a},
+A=\begin{bmatrix}a_{11}&amp;a_{12}\\a_{21}&amp;a_{22}\end{bmatrix},
 \qquad
-\lambda=1 \Longrightarrow \vec{b}
+\vec{b}=\begin{bmatrix}b_1\\b_2\end{bmatrix}
 \]</span></p>
-<p>Also:</p>
-<ul>
-<li><span class="math inline">\(\lambda \in \mathbb{R}\)</span> describes the entire line.</li>
-<li><span class="math inline">\(0 \leq \lambda \leq 1\)</span> describes the segment from <span class="math inline">\(\vec{a}\)</span> to <span class="math inline">\(\vec{b}\)</span>.</li>
-</ul>
-<p>The parameter <span class="math inline">\(\lambda\)</span> identifies a position on the line. To describe the vessel’s motion over time, we make this parameter a function of time.</p>
-<p>Suppose the vessel is at position <span class="math inline">\(\vec{a}\)</span> at time <span class="math inline">\(t_0\)</span> and at <span class="math inline">\(\vec{b}\)</span> at time <span class="math inline">\(t_1\)</span>, where <span class="math inline">\(t_1 &gt; t_0\)</span>. Assuming constant velocity, its position at time <span class="math inline">\(t\)</span> is:</p>
+<p>give</p>
 <p><span class="math display">\[
-\vec{r}(t)
-=
-\vec{a}
-+
-\frac{t-t_0}{t_1-t_0}
-(\vec{b}-\vec{a})
+A_1(\vec{b})=\begin{bmatrix}b_1&amp;a_{12}\\b_2&amp;a_{22}\end{bmatrix},
+\qquad
+A_2(\vec{b})=\begin{bmatrix}a_{11}&amp;b_1\\a_{21}&amp;b_2\end{bmatrix}.
+\]</span></p>
+</section>
+<section id="cramers-rule" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="cramers-rule"><span class="header-section-number">2</span> Cramer’s rule</h2>
+<p>The equation <span class="math inline">\(A\vec{x}=\vec{b}\)</span> says that <span class="math inline">\(\vec{b}=x_1\vec{a}_1+\cdots+x_n\vec{a}_n\)</span>. If we substitute this combination into column <span class="math inline">\(i\)</span> of a determinant, linearity in that column separates it into <span class="math inline">\(n\)</span> terms. Every term except the one containing <span class="math inline">\(x_i\vec{a}_i\)</span> has two equal columns and vanishes. Thus, <span class="math inline">\(\det(A_i(\vec{b}))=x_i\det(A)\)</span>.</p>
+<div id="nte-cramers-rule" class="callout callout-style-default callout-note callout-titled" title="Theorem 7: Cramer's Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1: Theorem 7: Cramer’s Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A\)</span> be an invertible <span class="math inline">\(n\times n\)</span> matrix. For every <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>, the unique solution of <span class="math inline">\(A\vec{x}=\vec{b}\)</span> has entries</p>
+<p><span class="math display">\[
+x_i=\frac{\det(A_i(\vec{b}))}{\det(A)},
+\qquad i=1,2,\ldots,n.
+\]</span></p>
+</div>
+</div>
+<section id="proof-using-the-determinant-of-a-product" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="proof-using-the-determinant-of-a-product"><span class="header-section-number">2.1</span> Proof using the determinant of a product</h3>
+<p>Let <span class="math inline">\(\vec{e}_1,\ldots,\vec{e}_n\)</span> be the columns of the identity matrix <span class="math inline">\(I\)</span>, and let <span class="math inline">\(I_i(\vec{x})\)</span> denote <span class="math inline">\(I\)</span> with column <span class="math inline">\(i\)</span> replaced by <span class="math inline">\(\vec{x}\)</span>. Since <span class="math inline">\(A\vec{e}_j=\vec{a}_j\)</span> and <span class="math inline">\(A\vec{x}=\vec{b}\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+A I_i(\vec{x})
+&amp;=A[\vec{e}_1\ \cdots\ \vec{e}_{i-1}\ \vec{x}\ \vec{e}_{i+1}\ \cdots\ \vec{e}_n]\\
+&amp;=[\vec{a}_1\ \cdots\ \vec{a}_{i-1}\ \vec{b}\ \vec{a}_{i+1}\ \cdots\ \vec{a}_n]\\
+&amp;=A_i(\vec{b}).
+\end{aligned}
+\]</span></p>
+<p>Taking determinants and using the product rule gives</p>
+<p><span class="math display">\[
+\det(A)\det(I_i(\vec{x}))=\det(A_i(\vec{b})).
+\]</span></p>
+<p>Row <span class="math inline">\(i\)</span> of <span class="math inline">\(I_i(\vec{x})\)</span> is zero except for its diagonal entry <span class="math inline">\(x_i\)</span>. Expanding along this row gives <span class="math inline">\(\det(I_i(\vec{x}))=x_i\)</span>: the remaining minor matrix is an identity matrix and the cofactor sign is positive. Consequently,</p>
+<p><span class="math display">\[
+\det(A)x_i=\det(A_i(\vec{b})).
+\]</span></p>
+<p>Invertibility ensures that <span class="math inline">\(\det(A)\ne0\)</span>, so division proves the formula.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Check the denominator first">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Check the denominator first
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cramer’s rule in this form requires <span class="math inline">\(\det(A)\ne0\)</span>. If <span class="math inline">\(\det(A)=0\)</span>, the system has either no solution or infinitely many solutions. Row reduction of the augmented matrix distinguishes these cases; division by zero does not give a solution.</p>
+</div>
+</div>
+</section>
+<section id="example-1-a-two-by-two-system" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="example-1-a-two-by-two-system"><span class="header-section-number">2.2</span> Example 1: a two-by-two system</h3>
+<p>Solve</p>
+<p><span class="math display">\[
+\begin{aligned}
+3x_1-2x_2&amp;=6,\\
+-5x_1+4x_2&amp;=8.
+\end{aligned}
+\]</span></p>
+<p>The coefficient matrix and replacement matrices are</p>
+<p><span class="math display">\[
+A=\begin{bmatrix}3&amp;-2\\-5&amp;4\end{bmatrix},
+\qquad
+A_1(\vec{b})=\begin{bmatrix}6&amp;-2\\8&amp;4\end{bmatrix},
+\qquad
+A_2(\vec{b})=\begin{bmatrix}3&amp;6\\-5&amp;8\end{bmatrix}.
+\]</span></p>
+<p>Their determinants are</p>
+<p><span class="math display">\[
+\begin{aligned}
+\det(A)&amp;=12-10=2,\\
+\det(A_1(\vec{b}))&amp;=24+16=40,\\
+\det(A_2(\vec{b}))&amp;=24+30=54.
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(\det(A)\ne0\)</span>, there is exactly one solution:</p>
+<p><span class="math display">\[
+x_1=\frac{40}{2}=20,
+\qquad
+x_2=\frac{54}{2}=27.
+\]</span></p>
+<p>Substitution checks both equations: <span class="math inline">\(3(20)-2(27)=6\)</span> and <span class="math inline">\(-5(20)+4(27)=8\)</span>.</p>
+</section>
+</section>
+<section id="application-to-engineering-a-parameter-dependent-system" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="application-to-engineering-a-parameter-dependent-system"><span class="header-section-number">3</span> Application to engineering: a parameter-dependent system</h2>
+<p>Laplace transforms can turn systems of linear differential equations with constant coefficients into algebraic systems involving a parameter <span class="math inline">\(s\)</span>. Cramer’s rule makes the dependence of the solution on that parameter explicit. The following example illustrates the algebra without requiring the transform itself.</p>
+<section id="example-2-determine-when-the-solution-is-unique" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="example-2-determine-when-the-solution-is-unique"><span class="header-section-number">3.1</span> Example 2: determine when the solution is unique</h3>
+<p>Consider</p>
+<p><span class="math display">\[
+\begin{aligned}
+3s x_1-2x_2&amp;=4,\\
+-6x_1+s x_2&amp;=1.
+\end{aligned}
 \]</span></p>
 <p>Here,</p>
 <p><span class="math display">\[
-\vec{v}
-=
-\frac{\vec{b}-\vec{a}}{t_1-t_0}
+A=\begin{bmatrix}3s&amp;-2\\-6&amp;s\end{bmatrix},
+\qquad
+A_1(\vec{b})=\begin{bmatrix}4&amp;-2\\1&amp;s\end{bmatrix},
+\qquad
+A_2(\vec{b})=\begin{bmatrix}3s&amp;4\\-6&amp;1\end{bmatrix}.
 \]</span></p>
-<p>is the vessel’s velocity vector. Therefore, the same equation can be written as:</p>
+<p>The determinant is</p>
 <p><span class="math display">\[
-\vec{r}(t)
-=
-\vec{a}
-+
-(t-t_0)
-\vec{v}
+\det(A)=3s^2-12=3(s+2)(s-2).
 \]</span></p>
-<p>Note: the interpolation formula describes the observed journey when:</p>
+<p>Therefore, the system has a unique solution exactly when <span class="math inline">\(s\ne\pm2\)</span>. For these values,</p>
 <p><span class="math display">\[
-t_0 \le t \le t_1
+\begin{aligned}
+x_1&amp;=\frac{4s+2}{3(s+2)(s-2)},\\
+x_2&amp;=\frac{3s+24}{3(s+2)(s-2)}
+=\frac{s+8}{(s+2)(s-2)}.
+\end{aligned}
 \]</span></p>
-<p>Values of <span class="math inline">\(t\)</span> outside this interval extrapolate the constant-velocity motion.</p>
-<div id="fig-vector-parametrization-004" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vector-parametrization-004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vectors-parametrization-004-hand-drawn-white-grid.png" class="img-fluid figure-img" style="width:50.0%" data-fig-pos="H">
+<p>At the excluded values, inspect the original equations. When <span class="math inline">\(s=2\)</span>, adding the two equations gives <span class="math inline">\(0=5\)</span>. When <span class="math inline">\(s=-2\)</span>, subtracting the second equation from the first gives <span class="math inline">\(0=3\)</span>. Thus, neither excluded value gives a solution.</p>
+<p>The determinant identifies where uniqueness fails, while the original equations establish what happens there. This distinction matters when a parameter represents part of an engineering model.</p>
+</section>
+</section>
+<section id="a-formula-for-the-inverse" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="a-formula-for-the-inverse"><span class="header-section-number">4</span> A formula for the inverse</h2>
+<p>The columns of <span class="math inline">\(A^{-1}\)</span> solve a particular collection of linear systems: column <span class="math inline">\(j\)</span> is the vector <span class="math inline">\(\vec{x}\)</span> satisfying <span class="math inline">\(A\vec{x}=\vec{e}_j\)</span>. Applying Cramer’s rule gives</p>
+<p><span class="math display">\[
+(A^{-1})_{ij}=\frac{\det(A_i(\vec{e}_j))}{\det(A)}.
+\]</span></p>
+<p>Column <span class="math inline">\(i\)</span> of <span class="math inline">\(A_i(\vec{e}_j)\)</span> has just one nonzero entry, a <span class="math inline">\(1\)</span> in row <span class="math inline">\(j\)</span>. Cofactor expansion down that column yields</p>
+<p><span class="math display">\[
+\det(A_i(\vec{e}_j))=(-1)^{j+i}\det(A_{ji})=C_{ji},
+\]</span></p>
+<p>where <span class="math inline">\(A_{ji}\)</span> is obtained by deleting row <span class="math inline">\(j\)</span> and column <span class="math inline">\(i\)</span> of <span class="math inline">\(A\)</span>, and <span class="math inline">\(C_{ji}\)</span> is its corresponding cofactor. These are the minor and cofactor definitions from <a href="../../notes/personal/3-1-introduction-to-determinants.html">Introduction to Determinants</a>. Hence,</p>
+<p><span class="math display">\[
+(A^{-1})_{ij}=\frac{C_{ji}}{\det(A)}.
+\]</span></p>
+<p>Notice the reversed indices: entry <span class="math inline">\((i,j)\)</span> of the inverse uses cofactor <span class="math inline">\(C_{ji}\)</span>. This is why the cofactor matrix must be transposed.</p>
+<p>The <strong>adjugate</strong> of <span class="math inline">\(A\)</span> is the transpose of its cofactor matrix:</p>
+<p><span class="math display">\[
+\operatorname{adj}(A)=[C_{ij}]^T=
+\begin{bmatrix}
+C_{11}&amp;C_{21}&amp;\cdots&amp;C_{n1}\\
+C_{12}&amp;C_{22}&amp;\cdots&amp;C_{n2}\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+C_{1n}&amp;C_{2n}&amp;\cdots&amp;C_{nn}
+\end{bmatrix}.
+\]</span></p>
+<div id="nte-adjugate-inverse" class="callout callout-style-default callout-note callout-titled" title="Theorem 8: An Inverse Formula">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-parametrization-004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Vector parametrization
-</figcaption>
-</figure>
+<div class="callout-title-container flex-fill">
+Note&nbsp;2: Theorem 8: An Inverse Formula
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(A\)</span> is an invertible <span class="math inline">\(n\times n\)</span> matrix, then</p>
+<p><span class="math display">\[
+A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A).
+\]</span></p>
+</div>
+</div>
+<p>For a two-by-two matrix this recovers the familiar formula from <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html">The Inverse of a Matrix</a>:</p>
+<p><span class="math display">\[
+\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix}^{-1}
+=\frac{1}{ad-bc}\begin{bmatrix}d&amp;-b\\-c&amp;a\end{bmatrix},
+\qquad ad-bc\ne0.
+\]</span></p>
+<section id="example-3-a-three-by-three-inverse" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="example-3-a-three-by-three-inverse"><span class="header-section-number">4.1</span> Example 3: a three-by-three inverse</h3>
+<p>Find the inverse of</p>
+<p><span class="math display">\[
+A=\begin{bmatrix}2&amp;1&amp;3\\1&amp;-1&amp;1\\1&amp;4&amp;-2\end{bmatrix}.
+\]</span></p>
+<p>Compute the nine cofactors, retaining the alternating signs:</p>
+<p><span class="math display">\[
+\begin{aligned}
+C_{11}&amp;=\begin{vmatrix}-1&amp;1\\4&amp;-2\end{vmatrix}=-2,
+&amp;C_{12}&amp;=-\begin{vmatrix}1&amp;1\\1&amp;-2\end{vmatrix}=3,
+&amp;C_{13}&amp;=\begin{vmatrix}1&amp;-1\\1&amp;4\end{vmatrix}=5,\\
+C_{21}&amp;=-\begin{vmatrix}1&amp;3\\4&amp;-2\end{vmatrix}=14,
+&amp;C_{22}&amp;=\begin{vmatrix}2&amp;3\\1&amp;-2\end{vmatrix}=-7,
+&amp;C_{23}&amp;=-\begin{vmatrix}2&amp;1\\1&amp;4\end{vmatrix}=-7,\\
+C_{31}&amp;=\begin{vmatrix}1&amp;3\\-1&amp;1\end{vmatrix}=4,
+&amp;C_{32}&amp;=-\begin{vmatrix}2&amp;3\\1&amp;1\end{vmatrix}=1,
+&amp;C_{33}&amp;=\begin{vmatrix}2&amp;1\\1&amp;-1\end{vmatrix}=-3.
+\end{aligned}
+\]</span></p>
+<p>The cofactor matrix and its transpose are</p>
+<p><span class="math display">\[
+C=\begin{bmatrix}-2&amp;3&amp;5\\14&amp;-7&amp;-7\\4&amp;1&amp;-3\end{bmatrix},
+\qquad
+\operatorname{adj}(A)=C^T=
+\begin{bmatrix}-2&amp;14&amp;4\\3&amp;-7&amp;1\\5&amp;-7&amp;-3\end{bmatrix}.
+\]</span></p>
+<p>Expanding <span class="math inline">\(\det(A)\)</span> along the first row gives</p>
+<p><span class="math display">\[
+\det(A)=2C_{11}+C_{12}+3C_{13}=2(-2)+3+3(5)=14.
+\]</span></p>
+<p>Since this is nonzero, the inverse exists and is</p>
+<p><span class="math display">\[
+A^{-1}=\frac{1}{14}
+\begin{bmatrix}-2&amp;14&amp;4\\3&amp;-7&amp;1\\5&amp;-7&amp;-3\end{bmatrix}.
+\]</span></p>
+<p>As a check on the cofactor calculations and transpose,</p>
+<p><span class="math display">\[
+\operatorname{adj}(A)A=
+\begin{bmatrix}-2&amp;14&amp;4\\3&amp;-7&amp;1\\5&amp;-7&amp;-3\end{bmatrix}
+\begin{bmatrix}2&amp;1&amp;3\\1&amp;-1&amp;1\\1&amp;4&amp;-2\end{bmatrix}
+=\begin{bmatrix}14&amp;0&amp;0\\0&amp;14&amp;0\\0&amp;0&amp;14\end{bmatrix}=14I.
+\]</span></p>
+<p>Dividing by <span class="math inline">\(14\)</span> therefore gives <span class="math inline">\(A^{-1}A=I\)</span>, as required.</p>
+</section>
+</section>
+<section id="summary" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="summary"><span class="header-section-number">5</span> Summary</h2>
+<p>Cramer’s rule finds <span class="math inline">\(x_i\)</span> by replacing column <span class="math inline">\(i\)</span> with the right-hand side and dividing the resulting determinant by <span class="math inline">\(\det(A)\)</span>. It applies when <span class="math inline">\(A\)</span> is square and invertible. Applying the same rule to the columns of the identity matrix gives the adjugate formula for <span class="math inline">\(A^{-1}\)</span>.</p>
+<p>Both formulas expose useful algebraic structure, especially in small systems and symbolic calculations involving parameters. Computing many determinants by hand quickly becomes cumbersome; elimination is generally the more practical approach for larger systems.</p>
 
 
 </section>
@@ -1028,13 +1026,13 @@ Figure&nbsp;3: Vector parametrization
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../notes/personal/00-theorems.html" class="pagination-link" aria-label="Theorems">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Theorems</span>
+      <a href="../../notes/personal/3-2-properties-of-determinants.html" class="pagination-link" aria-label="Properties of Determinants">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Properties of Determinants</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="pagination-link" aria-label="Linear Combinations and Span">
-        <span class="nav-page-text">Linear Combinations and Span</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html" class="pagination-link" aria-label="Determinants and Linear Transformations">
+        <span class="nav-page-text">Determinants and Linear Transformations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

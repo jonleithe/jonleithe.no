@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jon Leithe">
-<meta name="dcterms.date" content="2026-07-20">
+<meta name="dcterms.date" content="2026-09-17">
 
-<title>Vectors and Spaces – Project Polaris Academy</title>
+<title>Determinants and Linear Transformations – Project Polaris Academy</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,25 +31,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../../">
-<link href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" rel="next">
-<link href="../../../../notes/personal/00-theorems.html" rel="prev">
-<script src="../../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../../site_libs/bootstrap/bootstrap-05da614ce313ea6c1d550ae461cd086e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../notes/personal/3-3-determinants-as-area-or-volume.html" rel="next">
+<link href="../../notes/personal/3-3-cramers-rule.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-05da614ce313ea6c1d550ae461cd086e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,7 +117,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Project Polaris Academy</span>
     </a>
   </div>
@@ -142,7 +142,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Khan Academy — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/personal/06-distance-between-planes.html">Personal notes</a></li><li class="breadcrumb-item"><a href="../../notes/personal/3-3-determinants-and-linear-transformations.html">Determinants and Linear Transformations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,13 +164,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/00-theorems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/00-theorems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Theorems</span></a>
   </div>
 </li>
@@ -185,31 +185,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vectors and Spaces</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Combinations and Span</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/03-linear-dependence-and-independence.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/03-linear-dependence-and-independence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Dependence and Independence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/04-subspaces-and-the-basis-for-a-subspace.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/04-subspaces-and-the-basis-for-a-subspace.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Subspaces and the Basis for a Subspace</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/linear-algebra/courses/khan-academy/05-vector-dot-and-cross-products.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/linear-algebra/courses/khan-academy/05-vector-dot-and-cross-products.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vector Dot and Cross Products</span></a>
   </div>
 </li>
@@ -226,85 +226,85 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/06-distance-between-planes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/06-distance-between-planes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Distance Between Planes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/07-point-distance-to-plane.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/07-point-distance-to-plane.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Point Distance to a Plane</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/1-2-row-reduction-and-echelon-forms.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/1-2-row-reduction-and-echelon-forms.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elimination With Matrices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/1-8-linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/1-8-linear-transformations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-1-matrix-multiplication.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-1-matrix-multiplication.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrix Multiplication</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-2-elementary-matrices.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-2-elementary-matrices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elimination Matrices</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-2-the-inverse-of-a-matrix.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inverses</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/2-9-dimension-and-rank.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/2-9-dimension-and-rank.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dimension and Rank</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-1-introduction-to-determinants.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-1-introduction-to-determinants.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Properties of Determinants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cramer’s Rule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Determinants and Linear Transformations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Determinants as Area or Volume</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coordinate Systems in R²</span></a>
   </div>
 </li>
@@ -320,22 +320,22 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="header-section-number">1</span> TL;DR</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">2</span> Example</a></li>
-  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation"><span class="header-section-number">3</span> Notation</a></li>
-  <li><a href="#real-coordinate-spaces" id="toc-real-coordinate-spaces" class="nav-link" data-scroll-target="#real-coordinate-spaces"><span class="header-section-number">4</span> Real coordinate spaces</a></li>
-  <li><a href="#addition" id="toc-addition" class="nav-link" data-scroll-target="#addition"><span class="header-section-number">5</span> Addition</a></li>
-  <li><a href="#scalar-multiplication" id="toc-scalar-multiplication" class="nav-link" data-scroll-target="#scalar-multiplication"><span class="header-section-number">6</span> Scalar multiplication</a></li>
-  <li><a href="#parametric-representation-of-lines" id="toc-parametric-representation-of-lines" class="nav-link" data-scroll-target="#parametric-representation-of-lines"><span class="header-section-number">7</span> Parametric representation of lines</a></li>
+  <li><a href="#area-and-volume-scale-factors" id="toc-area-and-volume-scale-factors" class="nav-link active" data-scroll-target="#area-and-volume-scale-factors"><span class="header-section-number">1</span> Area and volume scale factors</a>
+  <ul class="collapse">
+  <li><a href="#proof-for-a-parallelogram-at-the-origin" id="toc-proof-for-a-parallelogram-at-the-origin" class="nav-link" data-scroll-target="#proof-for-a-parallelogram-at-the-origin"><span class="header-section-number">1.1</span> Proof for a parallelogram at the origin</a></li>
+  <li><a href="#parallelograms-away-from-the-origin" id="toc-parallelograms-away-from-the-origin" class="nav-link" data-scroll-target="#parallelograms-away-from-the-origin"><span class="header-section-number">1.2</span> Parallelograms away from the origin</a></li>
+  </ul></li>
+  <li><a href="#example-area-of-an-ellipse" id="toc-example-area-of-an-ellipse" class="nav-link" data-scroll-target="#example-area-of-an-ellipse"><span class="header-section-number">2</span> Example: area of an ellipse</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Khan Academy — Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../../../notes/linear-algebra/courses/khan-academy/01-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/personal/06-distance-between-planes.html">Personal notes</a></li><li class="breadcrumb-item"><a href="../../notes/personal/3-3-determinants-and-linear-transformations.html">Determinants and Linear Transformations</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Vectors and Spaces</h1>
+<h1 class="title">Determinants and Linear Transformations</h1>
 </div>
 
 
@@ -352,7 +352,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 20, 2026</p>
+      <p class="date">September 17, 2026</p>
     </div>
   </div>
   
@@ -364,263 +364,124 @@ window.Quarto = {
 </header>
 
 
-<div class="hidden">
+<p>A determinant does more than measure the area of one particular parallelogram or the volume of one particular parallelepiped. It gives the scale factor for the area or volume of every suitable region under the linear transformation <span class="math inline">\(\vec{x}\mapsto A\vec{x}\)</span>.</p>
+<p>This is the geometric role of a determinant: <span class="math inline">\(|\det(A)|\)</span> measures how much a linear transformation stretches, compresses, or collapses space. The sign of <span class="math inline">\(\det(A)\)</span> still records orientation, but geometric area and volume use its absolute value.</p>
+<section id="area-and-volume-scale-factors" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="area-and-volume-scale-factors"><span class="header-section-number">1</span> Area and volume scale factors</h2>
+<div id="nte-linear-transformation-area-volume" class="callout callout-style-default callout-note callout-titled" title="Theorem 10: Area and Volume Under Linear Transformations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;1: Theorem 10: Area and Volume Under Linear Transformations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(T\colon\mathbb{R}^2\to\mathbb{R}^2\)</span> be the linear transformation determined by a <span class="math inline">\(2\times2\)</span> matrix <span class="math inline">\(A\)</span>. If <span class="math inline">\(S\)</span> is a parallelogram in <span class="math inline">\(\mathbb{R}^2\)</span>, then</p>
 <p><span class="math display">\[
-\def\blueD#1{\color{blue}{#1}}
-\def\maroonD#1{\color{maroon}{#1}}
-\def\greenD#1{\color{green}{#1}}
-\def\redD#1{\color{red}{#1}}
-\def\goldD#1{\color{orange}{#1}}
+\operatorname{area}(T(S))=|\det(A)|\operatorname{area}(S).
+\]</span></p>
+<p>Let <span class="math inline">\(T\colon\mathbb{R}^3\to\mathbb{R}^3\)</span> be determined by a <span class="math inline">\(3\times3\)</span> matrix <span class="math inline">\(A\)</span>. If <span class="math inline">\(S\)</span> is a parallelepiped in <span class="math inline">\(\mathbb{R}^3\)</span>, then</p>
+<p><span class="math display">\[
+\operatorname{volume}(T(S))=|\det(A)|\operatorname{volume}(S).
 \]</span></p>
 </div>
-<p>Source: <a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy — Vectors and spaces</a></p>
-<p>Vectors are used to represent many things around us: from forces like gravity, acceleration, friction, stress and strain on structures, to computer graphics used in almost all modern-day movies and video games. Vectors are an important concept, not just in math, but in physics, engineering, and computer graphics, so you’re likely to see them again in other subjects.</p>
-<p>Geometrically, a vector can be represented by a directed line segment, or arrow, whose direction indicates the vector’s direction and whose length represents its magnitude. Vectors are used, for example, to describe the velocity of a moving object.</p>
-<p>The zero vector has magnitude zero and no defined direction. Vectors may also belong to a one-dimensional vector space. The zero vector is defined to be orthogonal to any other vector</p>
-<section id="tldr" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1</span> TL;DR</h2>
-<p>Some tl;dr related content</p>
-</section>
-<section id="example" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="example"><span class="header-section-number">2</span> Example</h2>
-<p>Suppose an object is moving at a speed of <span class="math inline">\(10\,\mathrm{m/s}\)</span>. If we also specify that it is moving generally towards north-east, we know both its speed and direction. Together, these define the object’s velocity. In physics, velocity is defined as the rate of change of position with respect to time.</p>
-<p>Translate this into a vector, and we get:</p>
-<ul>
-<li>the vector’s magnitude (or length) is <span class="math inline">\(10\,\mathrm{m/s}\)</span></li>
-<li>its direction is north-east</li>
-</ul>
-<p><a href="#fig-vectors-example" class="quarto-xref">Figure&nbsp;1</a> shows a vector drawn in standard form, which means from the origin (0, 0).</p>
-<div id="fig-vectors-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vectors-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vector-example-hand-drawn-polaris-warm-white-grid.png" class="img-fluid figure-img" style="width:40.0%" data-fig-pos="H">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vectors-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Example of a vector <span class="math inline">\(\vec{v}\)</span> running from the origin to the point <span class="math inline">\((8, 6)\)</span>.
-</figcaption>
-</figure>
-</div>
-<p>For a vector <span class="math inline">\(\vec{v}=(a, b)\)</span>, the magnitude is calculated using the Pythagorean theorem:</p>
+<p>If <span class="math inline">\(|\det(A)|&gt;1\)</span>, the transformation enlarges every such area or volume. If <span class="math inline">\(0&lt;|\det(A)|&lt;1\)</span>, it compresses them. When <span class="math inline">\(\det(A)=0\)</span>, the transformation collapses the relevant dimension, so every two-dimensional area or three-dimensional volume becomes zero.</p>
+<section id="proof-for-a-parallelogram-at-the-origin" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="proof-for-a-parallelogram-at-the-origin"><span class="header-section-number">1.1</span> Proof for a parallelogram at the origin</h3>
+<p>First consider a parallelogram at the origin with edge vectors <span class="math inline">\(\vec{b}_1\)</span> and <span class="math inline">\(\vec{b}_2\)</span>:</p>
 <p><span class="math display">\[
-\lVert\vec v\rVert=\sqrt{a^2+b^2}
+S=
+\left\{
+s_1\vec{b}_1+s_2\vec{b}_2
+\mathrel{}\middle|\mathrel{}
+0\le s_1\le1,\ 0\le s_2\le1
+\right\}.
 \]</span></p>
-<p>In the example given, we have the velocity vector</p>
+<p>Let</p>
 <p><span class="math display">\[
-\vec{v}
-=
-\begin{bmatrix}
-8 \\
-6
-\end{bmatrix}
-\,\mathrm{m/s}
+B=[\vec{b}_1\ \vec{b}_2].
 \]</span></p>
-<p>that gives us the magnitude</p>
-<p><span class="math display">\[
-\lVert\vec v\rVert = \sqrt{8^2+6^2} = \sqrt{64+36} = \sqrt{100} = 10\,\mathrm{m/s}
-\]</span></p>
-<p>A vector’s magnitude is denoted <span class="math inline">\(\lVert\vec v \rVert\)</span>.</p>
-</section>
-<section id="notation" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="notation"><span class="header-section-number">3</span> Notation</h2>
-<p>Vectors can be written in several ways:</p>
+<p>By linearity, every point of the image has the form</p>
 <p><span class="math display">\[
 \begin{aligned}
-\vec{v}
-&amp;= (1, 2, 3) \\
-&amp;= \begin{bmatrix}1\\2\\3\end{bmatrix} \\
-&amp;= \blueD{\hat{\imath}}+2\maroonD{\hat{\jmath}}+3\greenD{\hat{k}}
+T(s_1\vec{b}_1+s_2\vec{b}_2)
+&amp;=s_1T(\vec{b}_1)+s_2T(\vec{b}_2)\\
+&amp;=s_1A\vec{b}_1+s_2A\vec{b}_2.
 \end{aligned}
 \]</span></p>
-<p>A vector is often denoted by placing a small arrow above its name, as in <span class="math inline">\(\vec{v}\)</span>.</p>
-<p>Depending on the context, <span class="math inline">\((1,2,3)\)</span> can represent either a point or a vector. When it represents a position vector, the vector is drawn from the origin to the corresponding point. A free vector, however, may be translated without changing the vector.</p>
-<p>The second representation is called column-vector notation. In <span class="math inline">\(n\)</span> dimensions, a general column vector has the form</p>
+<p>Thus, <span class="math inline">\(T(S)\)</span> is the parallelogram determined by the columns of</p>
 <p><span class="math display">\[
-\begin{bmatrix}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{bmatrix}
+[A\vec{b}_1\ A\vec{b}_2]=AB.
 \]</span></p>
-<p>The third notation expresses a vector as a linear combination of standard basis vectors. Each standard basis vector has magnitude one.</p>
-<p>In two dimensions, the standard basis vectors are <span class="math inline">\(\blueD{\hat{\imath}}=(1,0)\)</span> and <span class="math inline">\(\maroonD{\hat{\jmath}}=(0,1)\)</span>. They are pronounced “i-hat” and “j-hat”.</p>
-<p>In three dimensions, the standard basis vectors are <span class="math inline">\(\blueD{\hat{\imath}}=(1,0,0)\)</span>, <span class="math inline">\(\maroonD{\hat{\jmath}}=(0,1,0)\)</span>, and <span class="math inline">\(\greenD{\hat{k}}=(0,0,1)\)</span>.</p>
-<p>In <span class="math inline">\(\mathbb{R}^n\)</span>, the standard basis vectors are usually denoted <span class="math inline">\(\mathbf e_1,\ldots,\mathbf e_n\)</span>.</p>
-<p>This notation might make more sense once we cover vector addition.</p>
-<p>Coordinate vectors can have any finite number of components. The space <span class="math inline">\(\mathbb R^n\)</span> has dimension <span class="math inline">\(n\)</span>.</p>
-</section>
-<section id="real-coordinate-spaces" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="real-coordinate-spaces"><span class="header-section-number">4</span> Real coordinate spaces</h2>
-<p>When working with vectors, you will often encounter notation such as <span class="math inline">\(\mathbb{R}^2\)</span> and <span class="math inline">\(\mathbb{R}^3\)</span>. The symbol <span class="math inline">\(\mathbb{R}\)</span> denotes the set of real numbers, while the exponent specifies the number of coordinates.</p>
-<p>For example,</p>
-<p><span class="math display">\[
-\mathbb{R}^2
-=
-\{(x_1,x_2) \mid x_1,x_2 \in \mathbb{R}\}
-\]</span></p>
-<p>is the set of all ordered pairs of real numbers. Similarly,</p>
-<p><span class="math display">\[
-\mathbb{R}^3
-=
-\{(x_1,x_2,x_3) \mid x_1,x_2,x_3 \in \mathbb{R}\}
-\]</span></p>
-<p>is the set of all ordered triples of real numbers. More generally, <span class="math inline">\(\mathbb{R}^n\)</span> is the set of all ordered <span class="math inline">\(n\)</span>-tuples of real numbers.</p>
-<p>An element of <span class="math inline">\(\mathbb{R}^n\)</span> is a vector and can be written as either a tuple or a column vector:</p>
-<p><span class="math display">\[
-\vec{v}
-=
-(v_1,v_2,\ldots,v_n)
-=
-\begin{bmatrix}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n
-\end{bmatrix}
-\]</span></p>
-<p>The space <span class="math inline">\(\mathbb{R}^2\)</span> is not itself a vector; it is a vector space of dimension two. A vector <span class="math inline">\(\vec{v}\in\mathbb{R}^2\)</span> has two components and can be represented in the coordinate plane. Likewise, a vector <span class="math inline">\(\vec{v}\in\mathbb{R}^3\)</span> has three components and can be represented in three-dimensional space.</p>
-<p>Depending on the context, the same tuple can describe either a point or the position vector from the origin to that point.</p>
-</section>
-<section id="addition" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="addition"><span class="header-section-number">5</span> Addition</h2>
-<p>Vectors can be added and subtracted provided that they belong to the same vector space. In <span class="math inline">\(\mathbb R^n\)</span>, this means that they must have the same number of components. We add two vectors by adding their corresponding components. Say we have:</p>
+<p>By <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html">Determinants as Area or Volume</a>,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\vec{v} &amp;= (v_1, v_2, \dots, v_n) \\
-\vec{w} &amp;= (w_1, w_2, \dots, w_n)
+\operatorname{area}(T(S))
+&amp;=|\det(AB)|\\
+&amp;=|\det(A)|\,|\det(B)|\\
+&amp;=|\det(A)|\operatorname{area}(S).
 \end{aligned}
 \]</span></p>
-<p>then their sum is:</p>
-<p><span class="math display">\[
-\vec{v}+\vec{w}
-= (v_1+w_1, v_2+w_2, \dots, v_n+w_n)
-\]</span></p>
-<p>The result of the addition (or subtraction) is another vector in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<p>Geometrically, <span class="math inline">\(\greenD{\vec{v}}+\redD{\vec{w}}\)</span> can be visualized by translating <span class="math inline">\(\redD{\vec{w}}\)</span> so that its tail lies at the tip of <span class="math inline">\(\greenD{\vec{v}}\)</span>. The resulting vector spans from the tail of <span class="math inline">\(\greenD{\vec{v}}\)</span> to the tip of the translated <span class="math inline">\(\redD{\vec{w}}\)</span>. The following example illustrates this.</p>
-<p>Suppose we have two vectors:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\greenD{\vec{v}} &amp;\greenD{= \begin{bmatrix} 3 \\ 1 \end{bmatrix}} \\
-\redD{\vec{w}} &amp;\redD{= \begin{bmatrix} -2 \\ 3 \end{bmatrix}}
-\end{aligned}
-\]</span></p>
-<p>Then we get:</p>
-<p><span class="math display">\[
-\greenD{\vec{v}}+\redD{\vec{w}}
-=
-\left[
-\begin{aligned}
-\greenD{3} &amp;{}+\redD{(-2)} \\
-\greenD{1} &amp;{}+\redD{3}
-\end{aligned}
-\right]
-=
-\begin{bmatrix}
-\goldD{1} \\
-\goldD{4}
-\end{bmatrix}
-\]</span></p>
-<p>The resulting vector is shown in orange in <a href="#fig-vector-add-example" class="quarto-xref">Figure&nbsp;2</a>.</p>
-<p>Similarly, looking at <a href="#fig-vector-add-example" class="quarto-xref">Figure&nbsp;2</a>, we can argue that <span class="math inline">\(\vec{w} = (\vec{v}+\vec{w}) - \vec{v}\)</span>. Said in another way: what do I have to add to <span class="math inline">\(\vec{v}\)</span> to get to <span class="math inline">\((\vec{v}+\vec{w})\)</span>?</p>
-<div id="fig-vector-add-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vector-add-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vector-2d-addition-polaris-hand-drawn-white-grid.png" class="img-fluid figure-img" style="width:50.0%" data-fig-pos="H">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-add-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Two-dimensional vector addition.
-</figcaption>
-</figure>
-</div>
+<p>The same argument in <span class="math inline">\(\mathbb{R}^3\)</span> gives the volume formula for a parallelepiped.</p>
 </section>
-<section id="scalar-multiplication" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="scalar-multiplication"><span class="header-section-number">6</span> Scalar multiplication</h2>
-<p>A scalar is simply a number. Scalar multiplication means multiplying each component of a vector by the scalar. If <span class="math inline">\(c\in\mathbb R\)</span> and <span class="math inline">\(\vec{v}=(v_1,\ldots,v_n)\)</span>, then</p>
+<section id="parallelograms-away-from-the-origin" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="parallelograms-away-from-the-origin"><span class="header-section-number">1.2</span> Parallelograms away from the origin</h3>
+<p>An arbitrary parallelogram is a translation of one at the origin. Write it as <span class="math inline">\(\vec{p}+S\)</span>, where <span class="math inline">\(S\)</span> is a parallelogram at the origin. Linearity gives</p>
 <p><span class="math display">\[
-c\vec v=(cv_1,\ldots,cv_n).
+T(\vec{p}+S)=T(\vec{p})+T(S).
 \]</span></p>
-<p>The resulting vector is collinear with the original vector, and its magnitude is <span class="math display">\[
-\lVert c\vec v\rVert=|c|\lVert\vec v\rVert.
-\]</span></p>
-<p>If <span class="math inline">\(c&gt;0\)</span>, the direction remains the same; if <span class="math inline">\(c&lt;0\)</span>, the direction is reversed. If <span class="math inline">\(c=0\)</span>, the result is the zero vector.</p>
+<p>The right-hand side is a translation of <span class="math inline">\(T(S)\)</span>, and translation does not change area. Therefore the formula holds for every parallelogram, not only for those with a vertex at the origin.</p>
 </section>
-<section id="parametric-representation-of-lines" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="parametric-representation-of-lines"><span class="header-section-number">7</span> Parametric representation of lines</h2>
-<p>During Algebra I, we learnt that non-vertical lines could be represented by:</p>
+</section>
+<section id="example-area-of-an-ellipse" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="example-area-of-an-ellipse"><span class="header-section-number">2</span> Example: area of an ellipse</h2>
+<p>Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be positive numbers. Find the area of the region <span class="math inline">\(E\)</span> bounded by the ellipse</p>
 <p><span class="math display">\[
-y=mx+b
+\frac{x_1^2}{a^2}+\frac{x_2^2}{b^2}=1.
 \]</span></p>
-<p>where <span class="math inline">\(m\)</span> is the slope and <span class="math inline">\(b\)</span> is the <span class="math inline">\(y\)</span>-intercept. This form cannot represent vertical lines and does not generalise conveniently to higher-dimensional spaces. Parametric representations overcome both limitations.</p>
-<p>Looking at <a href="#fig-vector-parametrization-004" class="quarto-xref">Figure&nbsp;3</a>, suppose <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> are the position vectors of two distinct points along the dotted line <span class="math inline">\(L\)</span>. The displacement vector pointing from <span class="math inline">\(\vec{a}\)</span> to <span class="math inline">\(\vec{b}\)</span> is:</p>
+<p>Start with the unit disk</p>
 <p><span class="math display">\[
-\vec{c} = {\vec{b} - \vec{a}}
+D=
+\left\{
+\begin{bmatrix}u_1\\u_2\end{bmatrix}
+\mathrel{}\middle|\mathrel{}
+u_1^2+u_2^2\le1
+\right\},
 \]</span></p>
-<p>Adding every scalar multiple of <span class="math inline">\(\vec{c}\)</span> to <span class="math inline">\(\vec{a}\)</span> gives every point on the line:</p>
+<p>whose area is <span class="math inline">\(\pi\)</span>. Define</p>
 <p><span class="math display">\[
-L
-=
-\{
-\vec{a}
-+
-\lambda
-\cdot
-\vec{c}
-\mid
-\lambda
-\in
-\mathbb{R}
-\}
-\]</span></p>
-<p>This gives: <span class="math display">\[
-\lambda=0 \Longrightarrow \vec{a},
+A=
+\begin{bmatrix}a&amp;0\\0&amp;b\end{bmatrix},
 \qquad
-\lambda=1 \Longrightarrow \vec{b}
+T(\vec{u})=A\vec{u}.
 \]</span></p>
-<p>Also:</p>
-<ul>
-<li><span class="math inline">\(\lambda \in \mathbb{R}\)</span> describes the entire line.</li>
-<li><span class="math inline">\(0 \leq \lambda \leq 1\)</span> describes the segment from <span class="math inline">\(\vec{a}\)</span> to <span class="math inline">\(\vec{b}\)</span>.</li>
-</ul>
-<p>The parameter <span class="math inline">\(\lambda\)</span> identifies a position on the line. To describe the vessel’s motion over time, we make this parameter a function of time.</p>
-<p>Suppose the vessel is at position <span class="math inline">\(\vec{a}\)</span> at time <span class="math inline">\(t_0\)</span> and at <span class="math inline">\(\vec{b}\)</span> at time <span class="math inline">\(t_1\)</span>, where <span class="math inline">\(t_1 &gt; t_0\)</span>. Assuming constant velocity, its position at time <span class="math inline">\(t\)</span> is:</p>
+<p>For <span class="math inline">\(\vec{x}=A\vec{u}\)</span>,</p>
 <p><span class="math display">\[
-\vec{r}(t)
-=
-\vec{a}
-+
-\frac{t-t_0}{t_1-t_0}
-(\vec{b}-\vec{a})
+x_1=au_1,
+\qquad
+x_2=bu_2.
 \]</span></p>
-<p>Here,</p>
+<p>Since <span class="math inline">\(a,b&gt;0\)</span>,</p>
 <p><span class="math display">\[
-\vec{v}
-=
-\frac{\vec{b}-\vec{a}}{t_1-t_0}
+u_1^2+u_2^2\le1
+\quad\Longleftrightarrow\quad
+\frac{x_1^2}{a^2}+\frac{x_2^2}{b^2}\le1.
 \]</span></p>
-<p>is the vessel’s velocity vector. Therefore, the same equation can be written as:</p>
+<p>Thus, <span class="math inline">\(E=T(D)\)</span>. The determinant is <span class="math inline">\(\det(A)=ab\)</span>, so Theorem 10 gives</p>
 <p><span class="math display">\[
-\vec{r}(t)
-=
-\vec{a}
-+
-(t-t_0)
-\vec{v}
+\operatorname{area}(E)
+=|\det(A)|\operatorname{area}(D)
+=ab\pi.
 \]</span></p>
-<p>Note: the interpolation formula describes the observed journey when:</p>
-<p><span class="math display">\[
-t_0 \le t \le t_1
-\]</span></p>
-<p>Values of <span class="math inline">\(t\)</span> outside this interval extrapolate the constant-velocity motion.</p>
-<div id="fig-vector-parametrization-004" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-vector-parametrization-004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vectors-parametrization-004-hand-drawn-white-grid.png" class="img-fluid figure-img" style="width:50.0%" data-fig-pos="H">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-parametrization-004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Vector parametrization
-</figcaption>
-</figure>
-</div>
+<p>The familiar ellipse-area formula <span class="math inline">\(\pi ab\)</span> is therefore a direct consequence of determinant scaling.</p>
+</section>
+<section id="summary" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="summary"><span class="header-section-number">3</span> Summary</h2>
+<p>For a linear transformation determined by <span class="math inline">\(A\)</span>, the magnitude <span class="math inline">\(|\det(A)|\)</span> is the area or volume scale factor. This result extends the geometric meaning of determinants from individual parallelograms and parallelepipeds to the effect of a transformation on entire regions.</p>
+<p>For the definition and elementary properties of linear transformations, see <a href="../../notes/personal/1-8-linear-transformations.html">Linear Transformations</a>.</p>
 
 
 </section>
@@ -1028,13 +889,13 @@ Figure&nbsp;3: Vector parametrization
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../../notes/personal/00-theorems.html" class="pagination-link" aria-label="Theorems">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Theorems</span>
+      <a href="../../notes/personal/3-3-cramers-rule.html" class="pagination-link" aria-label="Cramer's Rule">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cramer’s Rule</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../../notes/linear-algebra/courses/khan-academy/02-linear-combinations-and-span.html" class="pagination-link" aria-label="Linear Combinations and Span">
-        <span class="nav-page-text">Linear Combinations and Span</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html" class="pagination-link" aria-label="Determinants as Area or Volume">
+        <span class="nav-page-text">Determinants as Area or Volume</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

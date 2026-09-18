@@ -280,6 +280,30 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Determinants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cramer’s Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants and Linear Transformations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants as Area or Volume</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coordinate Systems in R²</span></a>
   </div>
@@ -362,7 +386,7 @@ c_i\in\mathbb{R} \text{ for }1\le i\le n
 <div id="fig-vector-linear-combinations-and-span-001" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vector-linear-combinations-and-span-001-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vectors-linear-combinations-and-span-001-hand-drawn.png" class="img-fluid figure-img" style="width:80.0%" data-fig-pos="H">
+<img src="../../../../images/vectors-linear-combinations-and-span-001-hand-drawn-white-grid.png" class="img-fluid figure-img" style="width:80.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-linear-combinations-and-span-001-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Example of collinear vectors
@@ -372,28 +396,31 @@ Figure&nbsp;1: Example of collinear vectors
 </section>
 <section id="examples-with-non-parallel-vectors" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="examples-with-non-parallel-vectors"><span class="header-section-number">1.2</span> Examples with non-parallel vectors</h3>
-<p>In comparison, referring to <a href="#fig-vector-linear-combinations-and-span-002" class="quarto-xref">Figure&nbsp;2</a>, we see that with the vectors</p>
+<p>Two perpendicular, nonzero vectors give two independent directions in the plane. We can construct such a pair by rotating one vector through <span class="math inline">\(90^\circ\)</span> counterclockwise. Start with</p>
 <p><span class="math display">\[
-\vec{v}
-=
-\begin{bmatrix}
-2 \\ 1
-\end{bmatrix}
-,
-\vec{w}
-=
-\begin{bmatrix}
-0 \\ 3
-\end{bmatrix}
+\vec v=\begin{bmatrix}2\\1\end{bmatrix},
+\qquad
+A=\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}.
 \]</span></p>
-<p>we are able to span all of <span class="math inline">\(\mathbb{R}^2\)</span>.</p>
+<p>The matrix <span class="math inline">\(A\)</span> sends <span class="math inline">\((x,y)\)</span> to <span class="math inline">\((-y,x)\)</span>. Applying it to <span class="math inline">\(\vec v\)</span> gives</p>
+<p><span class="math display">\[
+\vec w=A\vec v
+=\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}
+\begin{bmatrix}2\\1\end{bmatrix}
+=\begin{bmatrix}-1\\2\end{bmatrix}.
+\]</span></p>
+<p>Thus <span class="math inline">\(\vec w\)</span> is the rotated image of <span class="math inline">\(\vec v\)</span>, as shown in <a href="#fig-vector-linear-combinations-and-span-002" class="quarto-xref">Figure&nbsp;2</a>. Their dot product confirms that they are perpendicular:</p>
+<p><span class="math display">\[
+\vec v\cdot\vec w=2(-1)+1(2)=0.
+\]</span></p>
+<p>Both vectors have length <span class="math inline">\(\sqrt{5}\)</span>, since a rotation preserves length. They span all of <span class="math inline">\(\mathbb R^2\)</span>. Perpendicularity makes this example especially simple, but any two non-parallel vectors in <span class="math inline">\(\mathbb R^2\)</span> span the plane.</p>
 <div id="fig-vector-linear-combinations-and-span-002" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vector-linear-combinations-and-span-002-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../../../../images/vectors-linear-combinations-and-span-002-hand-drawn.png" class="img-fluid figure-img" style="width:80.0%" data-fig-pos="H">
+<img src="../../../../images/vectors-span-perpendicular-white-grid.png" class="img-fluid figure-img" style="width:80.0%" data-fig-pos="H">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vector-linear-combinations-and-span-002-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Example of non-parallel vectors
+Figure&nbsp;2: The vector <span class="math inline">\(\vec w=(-1,2)\)</span> is obtained by rotating <span class="math inline">\(\vec v=(2,1)\)</span> through <span class="math inline">\(90^\circ\)</span> counterclockwise.
 </figcaption>
 </figure>
 </div>
@@ -415,7 +442,7 @@ c_1
 +
 c_2
 \begin{bmatrix}
-0\\3
+-1\\2
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -424,37 +451,37 @@ x_1\\x_2
 \tag{1}\]</span></span></p>
 <p>This creates a system of two unknowns:</p>
 <p><span id="eq-span-x1"><span class="math display">\[
-2c_1 + 0c_2 = x_1
+2c_1 - c_2 = x_1
 \tag{2}\]</span></span></p>
 <p><span id="eq-span-x2"><span class="math display">\[
-c_1 + 3c_2 = x_2
+c_1 + 2c_2 = x_2
 \tag{3}\]</span></span></p>
-<p>Solving this system gives:</p>
+<p>Twice <a href="#eq-span-x1" class="quarto-xref">Equation&nbsp;2</a> plus <a href="#eq-span-x2" class="quarto-xref">Equation&nbsp;3</a> gives <span class="math inline">\(5c_1=2x_1+x_2\)</span>. Twice <a href="#eq-span-x2" class="quarto-xref">Equation&nbsp;3</a> minus <a href="#eq-span-x1" class="quarto-xref">Equation&nbsp;2</a> gives <span class="math inline">\(5c_2=-x_1+2x_2\)</span>. Hence:</p>
 <p><span id="eq-span-c1"><span class="math display">\[
-c_1 = \frac{1}{2}\cdot x_1
+c_1 = \frac{2x_1+x_2}{5}
 \tag{4}\]</span></span></p>
 <p><span id="eq-span-c2"><span class="math display">\[
-c_2 = \frac{1}{3}\left(x_2-\frac{x_1}{2}\right)
+c_2 = \frac{-x_1+2x_2}{5}
 \tag{5}\]</span></span></p>
-<p>Substituting <span class="math inline">\(x_1=1\)</span> and <span class="math inline">\(x_2=3\)</span> into <a href="#eq-span-c1" class="quarto-xref">Equation&nbsp;4</a> and <a href="#eq-span-c2" class="quarto-xref">Equation&nbsp;5</a>, we obtain:</p>
+<p>Substituting <span class="math inline">\(x_1=1\)</span> and <span class="math inline">\(x_2=3\)</span> into <a href="#eq-span-c1" class="quarto-xref">Equation&nbsp;4</a> and <a href="#eq-span-c2" class="quarto-xref">Equation&nbsp;5</a>, we obtain <span class="math inline">\(c_1=c_2=1\)</span>:</p>
 <p><span class="math display">\[
-\frac{1}{2}
+1
 \cdot
 \begin{bmatrix}
 2\\1
 \end{bmatrix}
 +
-\frac{5}{6}
+1
 \cdot
 \begin{bmatrix}
-0\\3
+-1\\2
 \end{bmatrix}
 =
 \begin{bmatrix}
 1\\3
 \end{bmatrix}
 \]</span></p>
-<p>Therefore, <span class="math inline">\(\vec{u}\in\operatorname{span}(\vec{v},\vec{w})\)</span>.</p>
+<p>Therefore, <span class="math inline">\(\vec u=\vec v+\vec w\)</span>. The formulas above provide coefficients for every <span class="math inline">\((x_1,x_2)\in\mathbb R^2\)</span>, confirming that <span class="math inline">\(\operatorname{span}(\vec v,\vec w)=\mathbb R^2\)</span>.</p>
 <ul>
 <li>General vector equation: <a href="#eq-span-general" class="quarto-xref">Equation&nbsp;1</a></li>
 <li>Component equations: <a href="#eq-span-x1" class="quarto-xref">Equation&nbsp;2</a> and <a href="#eq-span-x2" class="quarto-xref">Equation&nbsp;3</a></li>

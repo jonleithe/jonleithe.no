@@ -280,6 +280,30 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-2-properties-of-determinants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Determinants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-cramers-rule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cramer’s Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants and Linear Transformations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants as Area or Volume</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../notes/personal/examples/01-coordinate-systems-in-r2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coordinate Systems in R²</span></a>
   </div>
@@ -300,8 +324,11 @@ window.Quarto = {
   <li><a href="#chapter-1.4-the-matrix-equation-avecxvecb" id="toc-chapter-1.4-the-matrix-equation-avecxvecb" class="nav-link" data-scroll-target="#chapter-1.4-the-matrix-equation-avecxvecb">Chapter 1.4 – The Matrix Equation <span class="math inline">\(A\vec{x}=\vec{b}\)</span></a></li>
   <li><a href="#chapter-1.5-solution-sets-of-linear-systems" id="toc-chapter-1.5-solution-sets-of-linear-systems" class="nav-link" data-scroll-target="#chapter-1.5-solution-sets-of-linear-systems">Chapter 1.5 – Solution Sets of Linear Systems</a></li>
   <li><a href="#chapter-1.7-linear-independence" id="toc-chapter-1.7-linear-independence" class="nav-link" data-scroll-target="#chapter-1.7-linear-independence">Chapter 1.7 – Linear Independence</a></li>
+  <li><a href="#chapter-2.2-the-inverse-of-a-matrix" id="toc-chapter-2.2-the-inverse-of-a-matrix" class="nav-link" data-scroll-target="#chapter-2.2-the-inverse-of-a-matrix">Chapter 2.2 – The Inverse of a Matrix</a></li>
   <li><a href="#chapter-2.9-dimension-and-rank" id="toc-chapter-2.9-dimension-and-rank" class="nav-link" data-scroll-target="#chapter-2.9-dimension-and-rank">Chapter 2.9 – Dimension and Rank</a></li>
   <li><a href="#chapter-3.1-introduction-to-determinants" id="toc-chapter-3.1-introduction-to-determinants" class="nav-link" data-scroll-target="#chapter-3.1-introduction-to-determinants">Chapter 3.1 – Introduction to Determinants</a></li>
+  <li><a href="#chapter-3.2-properties-of-determinants" id="toc-chapter-3.2-properties-of-determinants" class="nav-link" data-scroll-target="#chapter-3.2-properties-of-determinants">Chapter 3.2 – Properties of Determinants</a></li>
+  <li><a href="#chapter-3.3-cramers-rule" id="toc-chapter-3.3-cramers-rule" class="nav-link" data-scroll-target="#chapter-3.3-cramers-rule">Chapter 3.3 – Cramer’s Rule</a></li>
   <li><a href="#chapter-4.1" id="toc-chapter-4.1" class="nav-link" data-scroll-target="#chapter-4.1">Chapter 4.1</a></li>
   </ul>
 </nav>
@@ -597,6 +624,100 @@ x_n\vec{a}_n
 </div>
 </div>
 </section>
+<section id="chapter-2.2-the-inverse-of-a-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-2.2-the-inverse-of-a-matrix">Chapter 2.2 – The Inverse of a Matrix</h2>
+<div id="theorem-2-2-4" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.4 — Inverse of a Two-by-Two Matrix">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 2.2.4 — Inverse of a Two-by-Two Matrix
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.135</p>
+<p><strong>Source note:</strong> <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html">The Inverse of a Matrix</a></p>
+<p>Let</p>
+<p><span class="math display">\[
+A=
+\begin{bmatrix}
+a &amp; b \\
+c &amp; d
+\end{bmatrix}.
+\]</span></p>
+<p>If <span class="math inline">\(ad-bc\ne0\)</span>, then <span class="math inline">\(A\)</span> is invertible and</p>
+<p><span class="math display">\[
+A^{-1}=
+\frac{1}{ad-bc}
+\begin{bmatrix}
+d &amp; -b \\
+-c &amp; a
+\end{bmatrix}.
+\]</span></p>
+<p>If <span class="math inline">\(ad-bc=0\)</span>, then <span class="math inline">\(A\)</span> is not invertible.</p>
+</div>
+</div>
+<div id="theorem-2-2-5" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.5 — Solving a System with an Inverse">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 2.2.5 — Solving a System with an Inverse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.136</p>
+<p><strong>Source note:</strong> <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html">The Inverse of a Matrix</a></p>
+<p>If <span class="math inline">\(A\)</span> is an invertible <span class="math inline">\(n\times n\)</span> matrix, then for every <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>, the equation</p>
+<p><span class="math display">\[
+A\vec{x}=\vec{b}
+\]</span></p>
+<p>has the unique solution</p>
+<p><span class="math display">\[
+\vec{x}=A^{-1}\vec{b}.
+\]</span></p>
+</div>
+</div>
+<div id="theorem-2-2-6" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.6 — Properties of Inverse Matrices">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 2.2.6 — Properties of Inverse Matrices
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.137</p>
+<p><strong>Source note:</strong> <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html">The Inverse of a Matrix</a></p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are invertible <span class="math inline">\(n\times n\)</span> matrices, then</p>
+<p><span class="math display">\[
+\left(A^{-1}\right)^{-1}=A,
+\qquad
+(AB)^{-1}=B^{-1}A^{-1},
+\qquad
+\left(A^T\right)^{-1}=\left(A^{-1}\right)^T.
+\]</span></p>
+</div>
+</div>
+<div id="theorem-2-2-7" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.2.7 — Row-Equivalence Criterion for Invertibility">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 2.2.7 — Row-Equivalence Criterion for Invertibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Textbook reference:</strong> p.140</p>
+<p><strong>Source note:</strong> <a href="../../notes/personal/2-2-the-inverse-of-a-matrix.html">The Inverse of a Matrix</a></p>
+<p>An <span class="math inline">\(n\times n\)</span> matrix <span class="math inline">\(A\)</span> is invertible if and only if <span class="math inline">\(A\)</span> is row equivalent to <span class="math inline">\(I_n\)</span>. In that case, every sequence of elementary row operations that reduces <span class="math inline">\(A\)</span> to <span class="math inline">\(I_n\)</span> also transforms <span class="math inline">\(I_n\)</span> into <span class="math inline">\(A^{-1}\)</span>.</p>
+</div>
+</div>
+</section>
 <section id="chapter-2.9-dimension-and-rank" class="level2">
 <h2 class="anchored" data-anchor-id="chapter-2.9-dimension-and-rank">Chapter 2.9 – Dimension and Rank</h2>
 <div id="theorem-2-9-1" class="callout callout-style-default callout-note callout-titled" title="Theorem 2.9.1 — Rank Theorem">
@@ -704,6 +825,154 @@ x_n\vec{a}_n
 <p>If <span class="math inline">\(A\)</span> is an upper- or lower-triangular matrix, then its determinant is the product of the entries on its main diagonal:</p>
 <p><span class="math display">\[
 \det(A)=a_{11}a_{22}\cdots a_{nn}.
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="chapter-3.2-properties-of-determinants" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3.2-properties-of-determinants">Chapter 3.2 – Properties of Determinants</h2>
+<div id="theorem-3-2-3" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.2.3 — Effects of Row Operations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.2.3 — Effects of Row Operations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-2-properties-of-determinants.html">Properties of Determinants</a></p>
+<p>Let <span class="math inline">\(A\)</span> be a square matrix, and let <span class="math inline">\(B\)</span> be obtained from <span class="math inline">\(A\)</span> by one row operation.</p>
+<ol type="1">
+<li>Adding a multiple of one row to another row leaves the determinant unchanged: <span class="math inline">\(\det(B)=\det(A)\)</span>.</li>
+<li>Interchanging two rows reverses the sign: <span class="math inline">\(\det(B)=-\det(A)\)</span>.</li>
+<li>Multiplying one row by <span class="math inline">\(k\)</span> multiplies the determinant by <span class="math inline">\(k\)</span>: <span class="math inline">\(\det(B)=k\det(A)\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="theorem-3-2-4" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.2.4 — Invertibility Test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.2.4 — Invertibility Test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-2-properties-of-determinants.html">Properties of Determinants</a></p>
+<p>A square matrix <span class="math inline">\(A\)</span> is invertible if and only if</p>
+<p><span class="math display">\[
+\det(A)\ne0.
+\]</span></p>
+</div>
+</div>
+<div id="theorem-3-2-5" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.2.5 — Transpose Invariance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.2.5 — Transpose Invariance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-2-properties-of-determinants.html">Properties of Determinants</a></p>
+<p>If <span class="math inline">\(A\)</span> is an <span class="math inline">\(n\times n\)</span> matrix, then</p>
+<p><span class="math display">\[
+\det(A)=\det(A^T).
+\]</span></p>
+</div>
+</div>
+<div id="theorem-3-2-6" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.2.6 — Determinant of a Product">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.2.6 — Determinant of a Product
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-2-properties-of-determinants.html">Properties of Determinants</a></p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="math inline">\(n\times n\)</span> matrices, then</p>
+<p><span class="math display">\[
+\det(AB)=\det(A)\det(B).
+\]</span></p>
+</div>
+</div>
+</section>
+<section id="chapter-3.3-cramers-rule" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3.3-cramers-rule">Chapter 3.3 – Cramer’s Rule</h2>
+<div id="theorem-3-3-7" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.3.7 — Cramer's Rule">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.3.7 — Cramer’s Rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-3-cramers-rule.html">Cramer’s Rule</a></p>
+<p>Let <span class="math inline">\(A\)</span> be an invertible <span class="math inline">\(n\times n\)</span> matrix. For every <span class="math inline">\(\vec{b}\in\mathbb{R}^n\)</span>, the unique solution of <span class="math inline">\(A\vec{x}=\vec{b}\)</span> has entries</p>
+<p><span class="math display">\[
+x_i=\frac{\det(A_i(\vec{b}))}{\det(A)},
+\qquad i=1,2,\ldots,n,
+\]</span></p>
+<p>where <span class="math inline">\(A_i(\vec{b})\)</span> is obtained by replacing column <span class="math inline">\(i\)</span> of <span class="math inline">\(A\)</span> with <span class="math inline">\(\vec{b}\)</span>.</p>
+</div>
+</div>
+<div id="theorem-3-3-8" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.3.8 — An Inverse Formula">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.3.8 — An Inverse Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-3-cramers-rule.html">Cramer’s Rule</a></p>
+<p>If <span class="math inline">\(A\)</span> is an invertible <span class="math inline">\(n\times n\)</span> matrix, then</p>
+<p><span class="math display">\[
+A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A),
+\]</span></p>
+<p>where <span class="math inline">\(\operatorname{adj}(A)=[C_{ij}]^T\)</span> is the transpose of the cofactor matrix of <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<div id="theorem-3-3-9" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.3.9 — Determinants as Area or Volume">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.3.9 — Determinants as Area or Volume
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-3-determinants-as-area-or-volume.html">Determinants as Area or Volume</a></p>
+<p>If <span class="math inline">\(A\)</span> is a <span class="math inline">\(2\times2\)</span> matrix, the area of the parallelogram determined by the columns of <span class="math inline">\(A\)</span> is <span class="math inline">\(|\det(A)|\)</span>. If <span class="math inline">\(A\)</span> is a <span class="math inline">\(3\times3\)</span> matrix, the volume of the parallelepiped determined by the columns of <span class="math inline">\(A\)</span> is <span class="math inline">\(|\det(A)|\)</span>.</p>
+</div>
+</div>
+<div id="theorem-3-3-10" class="callout callout-style-default callout-note callout-titled" title="Theorem 3.3.10 — Area and Volume Under Linear Transformations">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Theorem</span>Theorem 3.3.10 — Area and Volume Under Linear Transformations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Source note:</strong> <a href="../../notes/personal/3-3-determinants-and-linear-transformations.html">Determinants and Linear Transformations</a></p>
+<p>Let <span class="math inline">\(T\colon\mathbb{R}^2\to\mathbb{R}^2\)</span> be determined by a <span class="math inline">\(2\times2\)</span> matrix <span class="math inline">\(A\)</span>. For every parallelogram <span class="math inline">\(S\)</span> in <span class="math inline">\(\mathbb{R}^2\)</span>,</p>
+<p><span class="math display">\[
+\operatorname{area}(T(S))=|\det(A)|\operatorname{area}(S).
+\]</span></p>
+<p>Let <span class="math inline">\(T\colon\mathbb{R}^3\to\mathbb{R}^3\)</span> be determined by a <span class="math inline">\(3\times3\)</span> matrix <span class="math inline">\(A\)</span>. For every parallelepiped <span class="math inline">\(S\)</span> in <span class="math inline">\(\mathbb{R}^3\)</span>,</p>
+<p><span class="math display">\[
+\operatorname{volume}(T(S))=|\det(A)|\operatorname{volume}(S).
 \]</span></p>
 </div>
 </div>
