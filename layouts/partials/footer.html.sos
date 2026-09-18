@@ -1,3 +1,0 @@
-<footer class="footer">
-    <span>&copy; {{ now.Year }} Jon Leithe. All rights reserved.</span>
-</footer>
