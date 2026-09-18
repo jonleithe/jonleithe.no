@@ -20,12 +20,14 @@ build: academy-site
 
 deploy: build
 	lftp -u $(SFTP_USER) sftp://$(SFTP_HOST):$(SFTP_PORT) -e "\
+		set cmd:fail-exit yes; \
 		cd $(REMOTE_DIR); \
 		mirror --reverse --delete --verbose $(PUBLIC_DIR)/ ./; \
 		bye"
 
 deploy-dry-run: build
 	lftp -u $(SFTP_USER) sftp://$(SFTP_HOST):$(SFTP_PORT) -e "\
+		set cmd:fail-exit yes; \
 		cd $(REMOTE_DIR); \
 		mirror --reverse --delete --verbose --dry-run $(PUBLIC_DIR)/ ./; \
 		bye"
