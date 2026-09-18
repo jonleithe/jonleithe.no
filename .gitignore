@@ -1,1 +1,22 @@
 sftp.creds
+
+# Generated Hugo output and caches (includes the assembled Academy site)
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/.hugo_cache/
+
+# Local environment and editor settings
+.env
+.env.*
+!.env.example
+/.idea/
+/.vscode/
+
+# Editor backups and operating-system metadata
+*~
+*.swp
+*.swo
+*.sos
+.DS_Store
+Thumbs.db
